@@ -1,0 +1,35 @@
+.header-container {
+  width: 100%;
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 15vh;
+  padding: 0vw 3vw;
+
+  @media screen and (max-width: 767px) {
+    padding: 8vw;
+    height: 15vh;
+  }
+
+  .image-container {
+    position: relative;
+    width: 4vw;
+    height: 4vw;
+    transition: 0.25s opacity;
+    cursor: pointer;
+
+    @media screen and (max-width: 767px) {
+      width: 8vw;
+      height: 8vw;
+    }
+
+    &:hover {
+      opacity: 0.75;
+    }
+
+    .logo {
+      object-fit: contain;
+    }
+  }
+}

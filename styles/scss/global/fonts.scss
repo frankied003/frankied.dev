@@ -1,0 +1,29 @@
+$body: "Inter", sans-serif;
+
+:root {
+  --body: "Inter", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button,
+a {
+  font-family: var(--body);
+  color: var(--black);
+}
+
+p,
+input,
+textarea,
+li {
+  font-family: var(--body);
+}
+
+input {
+  border: none;
+  outline: none;
+}
