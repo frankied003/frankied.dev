@@ -1,0 +1,14 @@
+.skill-container {
+  background-color: rgb(204, 204, 204, 30%);
+  padding: 10px 0px;
+  min-width: 175px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+
+  .skill-title {
+    font-size: 18px;
+    color: var(--black);
+  }
+}

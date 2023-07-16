@@ -1,0 +1,26 @@
+.form-field-container {
+  display: flex;
+  flex-direction: column;
+
+  .title {
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+
+  .input {
+    width: 100%;
+    height: 45px;
+    font-size: 18px;
+    padding: 10px 15px;
+  }
+
+  .textarea {
+    width: 100%;
+    font-size: 18px;
+    padding: 10px 15px;
+    border: none;
+    outline: none;
+    resize: none;
+    height: 225px;
+  }
+}
