@@ -1,5 +1,6 @@
 import ComingSoon from "../components/comingSoon";
 import Introduction from "../components/index/introduction";
+import MyProjects from "../components/index/myProjects";
 import Header from "../partials/header";
 
 export default function Home() {
@@ -7,6 +8,7 @@ export default function Home() {
     <main className="home">
       <div className="scroll-content">
         <Introduction />
+        <MyProjects />
       </div>
     </main>
   );
