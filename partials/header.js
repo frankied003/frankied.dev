@@ -1,6 +1,5 @@
-import Image from "next/image";
+import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import React from "react";
 
 /**
  * Components imports.
@@ -20,8 +19,74 @@ import { BsDiscord } from "react-icons/bs";
 import { FaEthereum } from "react-icons/fa";
 
 export default function Header() {
+  const headerContainerRef = useRef();
+
+  /**
+   * GSAP animations.
+   */
+  useEffect(() => {
+    const leftTl = gsap.timeline();
+    const rightTl = gsap.timeline();
+
+    // Left header animation frankied.dev.
+    leftTl
+      .fromTo(
+        headerContainerRef.current.querySelector(".title"),
+        {
+          width: 0,
+        },
+        {
+          width: "100%",
+          duration: 2,
+        }
+      )
+      .fromTo(
+        headerContainerRef.current.querySelector(".title"),
+        {
+          "border-right-color": "rgba(0,0,0,0.75)",
+        },
+        {
+          "border-right-color": "rgba(0,0,0,0)",
+          duration: 0.5,
+          repeat: 5,
+          ease: "none",
+          yoyo: true,
+        },
+        "<"
+      );
+
+    rightTl
+      .fromTo(
+        headerContainerRef.current.querySelector(".location"),
+        {
+          autoAlpha: 0,
+          xPercent: 150,
+        },
+        {
+          autoAlpha: 1,
+          xPercent: 0,
+          duration: 0.5,
+          delay: 1,
+        }
+      )
+      .fromTo(
+        headerContainerRef.current.querySelectorAll(".social-media-link"),
+        {
+          autoAlpha: 0,
+          xPercent: 100,
+        },
+        {
+          autoAlpha: 1,
+          xPercent: 0,
+          duration: 0.5,
+          stagger: 0.1,
+        },
+        "<0.2"
+      );
+  }, []);
+
   return (
-    <div className="header-container">
+    <div className="header-container" ref={headerContainerRef}>
       <Link className="title-container" href="/" target="#">
         <p className="title">Frankied.dev</p>
       </Link>
