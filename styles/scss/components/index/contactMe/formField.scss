@@ -1,6 +1,7 @@
 .form-field-container {
   display: flex;
   flex-direction: column;
+  width: 100%;
 
   .title {
     font-size: 20px;
@@ -14,13 +15,34 @@
     padding: 10px 15px;
   }
 
-  .textarea {
-    width: 100%;
-    font-size: 18px;
-    padding: 10px 15px;
-    border: none;
-    outline: none;
-    resize: none;
-    height: 225px;
+  .flex-row {
+    display: flex;
+    gap: 10px;
+    flex: 1;
+
+    .textarea {
+      width: 100%;
+      font-size: 18px;
+      padding: 10px 15px;
+      border: none;
+      outline: none;
+      resize: none;
+      flex: 1;
+    }
+
+    .submit-button {
+      background-color: var(--black);
+      color: var(--white);
+      font-size: 18px;
+      writing-mode: vertical-rl;
+      text-orientation: upright;
+      text-transform: uppercase;
+      padding: 10px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
   }
 }

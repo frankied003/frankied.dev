@@ -6,6 +6,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "moment-timezone": "^0.5.43",
     "next": "latest",
     "prop-types": "^15.8.1",
     "react": "18.2.0",

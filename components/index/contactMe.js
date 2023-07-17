@@ -19,10 +19,7 @@ export default function ContactMe() {
         </div>
         <div className="form-container">
           <div className="left-container">
-            <FormField
-              title="Your Full Name or Business Name"
-              placeholder="Name"
-            />
+            <FormField title="Full Name or Business Name" placeholder="Name" />
             <FormField
               title="Email Address"
               placeholder="youareawesome@gmail.com"
@@ -34,6 +31,7 @@ export default function ContactMe() {
               title="Description"
               placeholder="Description"
               multiline
+              submit={() => console.log("submit")}
             />
           </div>
         </div>

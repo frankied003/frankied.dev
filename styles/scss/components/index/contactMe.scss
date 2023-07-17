@@ -1,7 +1,6 @@
 .contact-me-container {
   width: 100%;
-  min-height: 98%;
-  margin-bottom: 2vh;
+  height: 85%;
   border-bottom: 5px solid black;
   position: relative;
   display: flex;
@@ -36,18 +35,23 @@
       align-items: center;
       justify-content: center;
       width: 85%;
+      height: 70%;
       gap: 5%;
 
       .left-container {
         display: flex;
         flex-direction: column;
         justify-content: center;
+        justify-content: space-between;
         gap: 10px;
         width: 35%;
+        height: 75%;
       }
 
       .right-container {
         width: 50%;
+        display: flex;
+        height: 75%;
       }
     }
   }
