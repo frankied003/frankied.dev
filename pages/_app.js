@@ -20,23 +20,23 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Script
-        src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"
+        src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
         strategy="beforeInteractive"
       ></Script>
       <Script
-        src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/Flip.min.js"
+        src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Flip.min.js"
         strategy="beforeInteractive"
       ></Script>
       <Script
-        src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"
+        src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
         strategy="beforeInteractive"
       ></Script>
       <Script
-        src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollToPlugin.min.js"
+        src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"
         strategy="beforeInteractive"
       ></Script>
       <Script
-        src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/TextPlugin.min.js"
+        src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"
         strategy="beforeInteractive"
       ></Script>
       <Header />

@@ -1,5 +1,4 @@
 .home {
-  padding-top: 15vh; // header padding
   animation: hue-rotate 5s infinite linear;
   background: linear-gradient(
     135deg,
@@ -12,24 +11,13 @@
     hsla(360, 40%, 85%, 0.3),
     white
   );
-  z-index: 0;
 
-  .scroll-content {
-    height: 85vh;
-    width: 100%;
-    overflow: auto;
-  }
-
-  .scroll-content::-webkit-scrollbar {
-    display: none;
-  }
-}
-
-@keyframes hue-rotate {
-  0% {
-    filter: hue-rotate(0deg);
-  }
-  100% {
-    filter: hue-rotate(360deg);
+  @keyframes hue-rotate {
+    0% {
+      filter: hue-rotate(0deg);
+    }
+    100% {
+      filter: hue-rotate(360deg);
+    }
   }
 }

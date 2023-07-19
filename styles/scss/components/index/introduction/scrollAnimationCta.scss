@@ -1,0 +1,11 @@
+.lottie-animation {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  bottom: 3%;
+  left: 50%;
+  transition: 2s opacity;
+
+  &.hidden {
+    opacity: 0;
+  }
+}

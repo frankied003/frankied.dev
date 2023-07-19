@@ -80,33 +80,9 @@ select {
 @import "scss/partials/_partials";
 @import "scss/components/_components";
 
-.wrapper {
-  width: 100%;
-  max-width: 1920px;
-  padding: 0 20px;
-  margin: 0 auto;
-}
-
-.block {
-  width: 100%;
-  margin-bottom: 40px;
-
-  &.small-margin-bottom {
-    margin-bottom: 5px;
-  }
-}
-
 body {
-  background-color: var(--background);
-  position: relative;
-  min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
-  cursor: var(--regular);
-
-  &.active-menu {
-    overflow: hidden;
-  }
 }
 
 a {
@@ -126,15 +102,6 @@ button {
   border: none;
   outline: none;
   cursor: var(--hover);
-}
-
-.no-scroll {
-  overflow: hidden;
-  padding-right: 17px;
-
-  @media screen and (max-width: 640px) {
-    padding-right: 0px;
-  }
 }
 
 // changes to specific inputs

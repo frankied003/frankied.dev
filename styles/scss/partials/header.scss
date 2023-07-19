@@ -7,7 +7,8 @@
   height: 15vh;
   padding: 0vw 3vw;
   border-bottom: 5px solid black;
-  z-index: 1;
+  z-index: 1000; /* Ensure header is always on top */
+  background: rgba(255, 255, 255, 0.4);
 
   .title-container {
     align-self: center;
