@@ -96,21 +96,25 @@ export default function MyProjects() {
             title="Isekai Meta"
             role={"Co-founder & CTO"}
             src="/assets/projects/isekaiMeta.png"
+            projectClass="project-1"
           />
           <Project
             title="Voleious"
             role={"Founder"}
             src="/assets/projects/voleious.png"
+            projectClass="project-2"
           />
           <Project
             title="DigiSevn Delivery"
             role={"Mobile Developer"}
             src="/assets/projects/digiSevn.png"
+            projectClass="project-3"
           />
           <Project
             title="onBoard"
             role={"Full-Stack Developer"}
             src="/assets/projects/onBoard.png"
+            projectClass="project-4"
           />
         </div>
         <WorkTogether />

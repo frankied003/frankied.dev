@@ -51,7 +51,7 @@ export default function Project(props) {
   }, []);
 
   return (
-    <div className="project-container" ref={cardRef}>
+    <div className={`project-container ${props.projectClass}`} ref={cardRef}>
       <div className="image-container">
         <Image src={props.src} fill alt="Frankied Project" className="image" />
       </div>
