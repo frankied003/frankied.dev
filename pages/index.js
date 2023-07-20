@@ -1,4 +1,3 @@
-import ComingSoon from "../components/comingSoon";
 import ContactMe from "../components/index/contactMe";
 import Footer from "../components/index/footer";
 import Introduction from "../components/index/introduction";

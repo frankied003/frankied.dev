@@ -18,21 +18,79 @@ export default function Introduction() {
     gsap.registerPlugin(ScrollTrigger);
 
     let ctx = gsap.context(() => {
+      const loadTl = gsap.timeline();
+
+      loadTl
+        .fromTo(
+          introductionContainerRef.current.querySelector(".image-container"),
+          { autoAlpha: 0 },
+          { autoAlpha: 1, delay: 1 }
+        )
+        .fromTo(
+          introductionContainerRef.current.querySelector(".image-container"),
+          { xPercent: -100 },
+          { xPercent: 0, delay: 0.5 }
+        )
+        .fromTo(
+          introductionContainerRef.current.querySelectorAll(".animate"),
+          { autoAlpha: 0, y: 50, skewY: 5 },
+          { autoAlpha: 1, y: 0, skewY: 0, stagger: 0.2 }
+        )
+        .fromTo(
+          introductionContainerRef.current.querySelector(".lottie-animation"),
+          { autoAlpha: 0, y: 50 },
+          { autoAlpha: 1, y: 0 },
+          "<"
+        );
+
       const scrollTl = gsap.timeline({
         scrollTrigger: {
           trigger: introductionContainerRef.current,
           pin: true,
           scrub: 1,
           start: "15% 15%",
-          end: "bottom 15%",
+          end: "+=2000",
           markers: true,
         },
       });
-      scrollTl.fromTo(
-        introductionContainerRef.current.querySelector(".image-container"),
-        { rotate: 0 },
-        { rotate: 90 }
-      );
+
+      scrollTl
+        .to(
+          introductionContainerRef.current.querySelector(".image-container"),
+          { rotate: 90 }
+        )
+        .to(
+          introductionContainerRef.current.querySelector(".primary"),
+          { y: "-100%", rotateX: 90, ease: "none" },
+          "<"
+        )
+        .fromTo(
+          introductionContainerRef.current.querySelector(".secondary"),
+          { y: 0, rotateX: 90 },
+          { y: "-100%", rotateX: 0, ease: "none" },
+          "<"
+        )
+        .to(
+          introductionContainerRef.current.querySelector(".third"),
+          { y: "-100%", rotateX: 90, ease: "none" },
+          "<"
+        )
+        .to(introductionContainerRef.current.querySelector(".secondary"), {
+          y: "-200%",
+          rotateX: 90,
+          ease: "none",
+        })
+        .to(
+          introductionContainerRef.current.querySelector(".third"),
+          { y: "-200%", rotateX: 0, ease: "none" },
+          "<"
+        )
+        .to(introductionContainerRef.current.querySelector(".third"), {
+          y: "-200%",
+          rotateX: 0,
+          ease: "none",
+          duration: 0.2,
+        });
     });
     return () => ctx.revert();
   }, []);
@@ -40,13 +98,19 @@ export default function Introduction() {
   return (
     <div className="introduction-container" ref={introductionContainerRef}>
       <div className="content">
-        <p className="intro">
+        <p className="intro animate">
           <strong className="what-up">What&apos;s up!</strong>{" "}
           <span className="title-rest">
             My name is Frankie DiGiacomo and I am a{" "}
           </span>
         </p>
-        <p className="position">Full-Stack Developer.</p>
+        <div className="animate">
+          <div className="position-container">
+            <p className="position primary">Full-Stack Developer.</p>
+            <p className="position secondary">UI/UX Designer.</p>
+            <p className="position third">Data Scientist.</p>
+          </div>
+        </div>
         <LearnMoreButton />
       </div>
       <div className="image-container">

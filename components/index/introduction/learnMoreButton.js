@@ -50,7 +50,7 @@ export default function LearnMoreButton() {
   }, []);
 
   return (
-    <div className="learn-more-container" ref={buttonRef}>
+    <div className="learn-more-container animate" ref={buttonRef}>
       <p className="learn-more-text">Learn More</p>
       <BsArrowDown className="icon" />
     </div>

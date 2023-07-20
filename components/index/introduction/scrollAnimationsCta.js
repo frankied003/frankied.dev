@@ -33,28 +33,21 @@ export default function ScrollAnimationCta() {
    */
   useEffect(() => {
     const checkScroll = () => {
-      if (scrollContainer.scrollTop !== 0) {
-        setIsScrolled(true);
+      if (window.scrollY != 0 && !isScrolled) {
+        gsap.to(scrollContainerRef.current, { opacity: 0 });
       }
+      setIsScrolled(true);
     };
 
-    const scrollContainer = document.querySelector(".scroll-content");
-    if (scrollContainer) {
-      scrollContainer.addEventListener("scroll", checkScroll);
-    }
+    window.addEventListener("scroll", checkScroll);
 
     return () => {
-      if (scrollContainer) {
-        scrollContainer.removeEventListener("scroll", checkScroll);
-      }
+      window.removeEventListener("scroll", checkScroll);
     };
   }, []);
 
   return (
-    <div
-      className={`lottie-animation ${isScrolled ? "hidden" : null}`}
-      ref={scrollContainerRef}
-    >
+    <div className={`lottie-animation`} ref={scrollContainerRef}>
       <Lottie options={defaultOptions} height={75} width={75} />
     </div>
   );
