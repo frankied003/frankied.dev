@@ -13,6 +13,9 @@ export default function Introduction() {
    */
   const introductionContainerRef = useRef(null);
 
+  /**
+   * GSAP animations.
+   */
   useEffect(() => {
     // Scroll animation
     gsap.registerPlugin(ScrollTrigger);
@@ -50,26 +53,35 @@ export default function Introduction() {
           scrub: 1,
           start: "15% 15%",
           end: "+=2000",
-          markers: true,
+          // markers: true,
         },
       });
 
-      scrollTl
-        .to(
-          introductionContainerRef.current.querySelector(".image-container"),
-          { rotate: 90 }
-        )
+      const imgTl = gsap.timeline();
+      imgTl.to(
+        introductionContainerRef.current.querySelector(".image-container"),
+        { rotate: 90, duration: 4 }
+      );
+
+      const primaryTl = gsap.timeline();
+      primaryTl
         .to(
           introductionContainerRef.current.querySelector(".primary"),
-          { y: "-100%", rotateX: 90, ease: "none" },
+          { y: "-100%", rotateX: 90, ease: "none", duration: 1 },
           "<"
         )
         .fromTo(
           introductionContainerRef.current.querySelector(".secondary"),
           { y: 0, rotateX: 90 },
-          { y: "-100%", rotateX: 0, ease: "none" },
+          { y: "-100%", rotateX: 0, ease: "none", duration: 1 },
           "<"
         )
+        .to(introductionContainerRef.current.querySelector(".secondary"), {
+          y: "-100%",
+          rotateX: 0,
+          ease: "none",
+          duration: 1,
+        })
         .to(
           introductionContainerRef.current.querySelector(".third"),
           { y: "-100%", rotateX: 90, ease: "none" },
@@ -79,18 +91,16 @@ export default function Introduction() {
           y: "-200%",
           rotateX: 90,
           ease: "none",
+          duration: 1,
         })
         .to(
           introductionContainerRef.current.querySelector(".third"),
-          { y: "-200%", rotateX: 0, ease: "none" },
+          { y: "-200%", rotateX: 0, ease: "none", duration: 1 },
           "<"
-        )
-        .to(introductionContainerRef.current.querySelector(".third"), {
-          y: "-200%",
-          rotateX: 0,
-          ease: "none",
-          duration: 0.2,
-        });
+        );
+
+      scrollTl.add(imgTl, 0);
+      scrollTl.add(primaryTl, 0);
     });
     return () => ctx.revert();
   }, []);

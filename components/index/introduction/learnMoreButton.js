@@ -9,6 +9,28 @@ export default function LearnMoreButton() {
   const buttonRef = useRef(null);
 
   /**
+   * OnClick function to scroll down to the next page.
+   * 15vh is the height of the header, so I want the borders
+   * to line up properly.
+   */
+  const scrollDown = () => {
+    const viewportHeight = Math.max(
+      document.documentElement.clientHeight || 0,
+      window.innerHeight || 0
+    );
+    const offset = viewportHeight * 0.15; // 15vh - the header height
+
+    gsap.to(window, {
+      duration: 5,
+      scrollTo: {
+        y: ".my-projects-container",
+        offsetY: offset,
+      },
+      ease: "power4.out",
+    });
+  };
+
+  /**
    * UseEffect hook for running titling card GSAP effect.
    */
   useEffect(() => {
@@ -50,7 +72,11 @@ export default function LearnMoreButton() {
   }, []);
 
   return (
-    <div className="learn-more-container animate" ref={buttonRef}>
+    <div
+      className="learn-more-container animate"
+      ref={buttonRef}
+      onClick={scrollDown}
+    >
       <p className="learn-more-text">Learn More</p>
       <BsArrowDown className="icon" />
     </div>

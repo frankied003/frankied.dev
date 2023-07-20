@@ -1,6 +1,6 @@
 .my-skills-container {
   width: 100%;
-  min-height: 98%;
+  min-height: 83vh;
   border-bottom: 5px solid black;
   position: relative;
 
@@ -20,32 +20,46 @@
       align-items: flex-start;
       justify-content: space-between;
 
-      .title {
-        font-size: 64px;
-        font-weight: 700;
-        color: var(--black);
+      .title-container {
+        width: fit-content;
         margin-bottom: 25px;
+
+        .title {
+          font-size: 64px;
+          font-weight: 700;
+          color: var(--black);
+          padding-right: 5px;
+          cursor: pointer;
+          overflow: hidden;
+          border-right: 5px solid rgba(0, 0, 0, 0.75);
+          white-space: nowrap;
+        }
       }
     }
 
-    .skill-section {
+    .skill-section-container {
       width: 75%;
-      margin-bottom: 2%;
+      height: 100%;
 
-      .title {
-        font-size: 28px;
-        color: var(--black);
-        margin-bottom: 25px;
-      }
-
-      .skills-container {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
+      .skill-section {
         width: 100%;
-        gap: 20px;
-        flex-wrap: wrap;
+        margin-bottom: 2%;
+
+        .title {
+          font-size: 28px;
+          color: var(--black);
+          margin-bottom: 25px;
+        }
+
+        .skills-container {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          gap: 20px;
+          flex-wrap: wrap;
+        }
       }
     }
   }
