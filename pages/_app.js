@@ -5,6 +5,7 @@ import Script from "next/script";
 import { useEffect, useRef } from "react";
 import Background from "../partials/background";
 import Header from "../partials/header";
+import Cursor from "../components/cursor";
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
@@ -40,6 +41,7 @@ function MyApp({ Component, pageProps }) {
         strategy="beforeInteractive"
       ></Script>
       <Background />
+      <Cursor />
       <Header />
       <Component {...pageProps} />
     </>
