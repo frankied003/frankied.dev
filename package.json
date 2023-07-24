@@ -6,6 +6,9 @@
     "start": "next start"
   },
   "dependencies": {
+    "@react-three/drei": "^9.79.3",
+    "@react-three/fiber": "^8.13.5",
+    "@types/three": "^0.154.0",
     "gsap": "^3.12.2",
     "moment-timezone": "^0.5.43",
     "next": "latest",
@@ -14,6 +17,7 @@
     "react-dom": "18.2.0",
     "react-icons": "^4.10.1",
     "react-lottie": "^1.2.3",
-    "sass": "^1.63.6"
+    "sass": "^1.63.6",
+    "three": "^0.154.0"
   }
 }

@@ -41,8 +41,8 @@ function MyApp({ Component, pageProps }) {
         strategy="beforeInteractive"
       ></Script>
       <Background />
-      <Cursor />
-      <Header />
+      {/* <Cursor /> */}
+      {/* <Header /> */}
       <Component {...pageProps} />
     </>
   );
