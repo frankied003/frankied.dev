@@ -9,7 +9,7 @@ import { useFrame } from "@react-three/fiber";
 export default function Model(props) {
   const group = useRef();
   const { nodes, materials, animations } = useGLTF(
-    "/assets/threeJs/macbook8.glb"
+    "/assets/threeJs/macbook.glb"
   );
   const { actions } = useAnimations(animations, group);
   const scroll = useScroll();
@@ -101,77 +101,79 @@ export default function Model(props) {
               castShadow
               receiveShadow
               geometry={nodes.mesh002_1.geometry}
-              material={materials.chrome}
+              material={materials.rubba}
             />
             <mesh
               name="mesh002_2"
               castShadow
               receiveShadow
               geometry={nodes.mesh002_2.geometry}
-              material={materials.rubba}
+              material={materials.velvet}
             />
             <mesh
               name="mesh002_3"
               castShadow
               receiveShadow
               geometry={nodes.mesh002_3.geometry}
-              material={materials.velvet}
+              material={materials.scr}
             />
             <mesh
               name="mesh002_4"
               castShadow
               receiveShadow
               geometry={nodes.mesh002_4.geometry}
-              material={materials.scr}
+              material={materials.miscb}
             />
             <mesh
               name="mesh002_5"
               castShadow
               receiveShadow
               geometry={nodes.mesh002_5.geometry}
-              material={materials.miscb}
+              material={materials["Basic Glass"]}
             />
             <mesh
               name="mesh002_6"
               castShadow
               receiveShadow
               geometry={nodes.mesh002_6.geometry}
-              material={materials["Basic Glass"]}
+              material={materials.bezel}
             />
             <mesh
               name="mesh002_7"
               castShadow
               receiveShadow
               geometry={nodes.mesh002_7.geometry}
-              material={materials.bezel}
+              material={materials["cam glass"]}
             />
             <mesh
               name="mesh002_8"
               castShadow
               receiveShadow
               geometry={nodes.mesh002_8.geometry}
-              material={materials["cam glass"]}
+              material={materials.sensa}
             />
             <mesh
               name="mesh002_9"
               castShadow
               receiveShadow
               geometry={nodes.mesh002_9.geometry}
-              material={materials.sensa}
+              material={materials["cam-mat"]}
             />
             <mesh
               name="mesh002_10"
               castShadow
               receiveShadow
               geometry={nodes.mesh002_10.geometry}
-              material={materials["cam-mat"]}
+              material={materials.cam}
             />
             <mesh
-              name="mesh002_11"
+              name="Text001"
               castShadow
               receiveShadow
-              geometry={nodes.mesh002_11.geometry}
-              material={materials.cam}
+              geometry={nodes.Text001.geometry}
+              material={materials.bezel}
+              position={[0, 0.106, -0.01]}
+              rotation={[-Math.PI / 2, 0, 0]}
             />
           </group>
         </group>
@@ -180,4 +182,4 @@ export default function Model(props) {
   );
 }
 
-useGLTF.preload("/assets/threeJs/macbook8.glb");
+useGLTF.preload("/assets/threeJs/macbook.glb");

@@ -8,7 +8,7 @@ export default function Test() {
   return (
     <div style={{ width: "100vw", height: "100vh" }}>
       <Canvas shadows camera={{ fov: 50, position: [0, 0, 3] }}>
-        <Stage preset="rembrandt" intensity={1} environment="city"></Stage>
+        <Stage preset="rembrandt" intensity={1} environment="sunset"></Stage>
         <ScrollControls pages={2} damping={0.25}>
           <Model />
         </ScrollControls>
