@@ -5,7 +5,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-bottom: 5px solid black;
+  border-bottom: 5px solid rgb(0, 0, 0, 0);
   position: relative;
 
   .content {
@@ -20,6 +20,10 @@
       font-size: 42px;
       line-height: 1;
       color: var(--grey);
+    }
+
+    .animate {
+      opacity: 0;
     }
 
     .position-container {
@@ -39,6 +43,7 @@
     position: relative;
     width: 25%;
     height: 40%;
+    opacity: 0;
 
     .image {
       object-fit: contain;

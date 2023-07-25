@@ -25,9 +25,15 @@ export default function Introduction() {
 
       loadTl
         .fromTo(
+          introductionContainerRef.current,
+          { borderBottomColor: "rgb(0,0,0,0)" },
+          { borderBottomColor: "rgb(0,0,0,0.9)", delay: 1 }
+        )
+        .fromTo(
           introductionContainerRef.current.querySelector(".image-container"),
           { autoAlpha: 0 },
-          { autoAlpha: 1, delay: 1 }
+          { autoAlpha: 1 },
+          "<"
         )
         .fromTo(
           introductionContainerRef.current.querySelector(".image-container"),

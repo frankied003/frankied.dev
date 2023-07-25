@@ -32,6 +32,8 @@ export default function ScrollAnimationCta() {
    * If scrolling, this will remove the lottie animation.
    */
   useEffect(() => {
+    gsap.fromTo(scrollContainerRef.current, { autoAlpha: 0 }, { autoAlpha: 1 });
+
     const checkScroll = () => {
       if (window.scrollY != 0 && !isScrolled) {
         gsap.to(scrollContainerRef.current, { opacity: 0 });

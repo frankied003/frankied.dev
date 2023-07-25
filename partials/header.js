@@ -31,14 +31,22 @@ export default function Header() {
     // Left header animation frankied.dev.
     leftTl
       .fromTo(
+        headerContainerRef.current,
+        { borderBottomColor: "rgb(0,0,0,0)" },
+        { borderBottomColor: "rgb(0,0,0,0.9)", delay: 1 }
+      )
+      .fromTo(
         headerContainerRef.current.querySelector(".title"),
         {
+          autoAlpha: 0,
           width: 0,
         },
         {
+          autoAlpha: 1,
           width: "100%",
           duration: 2,
-        }
+        },
+        "<"
       )
       .fromTo(
         headerContainerRef.current.querySelector(".title"),

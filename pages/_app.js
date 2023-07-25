@@ -4,7 +4,6 @@ import { useRouter } from "next/router";
 import Script from "next/script";
 import { useEffect, useRef } from "react";
 import Background from "../partials/background";
-import Header from "../partials/header";
 import Cursor from "../components/cursor";
 
 function MyApp({ Component, pageProps }) {
@@ -42,7 +41,6 @@ function MyApp({ Component, pageProps }) {
       ></Script>
       <Background />
       {/* <Cursor /> */}
-      {/* <Header /> */}
       <Component {...pageProps} />
     </>
   );

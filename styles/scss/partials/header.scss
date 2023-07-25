@@ -6,13 +6,12 @@
   justify-content: space-between;
   height: 15vh;
   padding: 0vw 3vw;
-  border-bottom: 5px solid black;
+  border-bottom: 5px solid rgb(0, 0, 0, 0);
   z-index: 1000; /* Ensure header is always on top */
-  background: rgba(255, 255, 255, 0.4);
+  // background: rgba(255, 255, 255, 0.4);
 
   .title-container {
     align-self: center;
-    width: fit-content;
 
     .title {
       font-size: 24px;
@@ -22,6 +21,8 @@
       // cursor: pointer;
       overflow: hidden;
       border-right: 3px solid rgba(0, 0, 0, 0.75);
+      white-space: nowrap;
+      opacity: 0;
     }
   }
 
@@ -37,6 +38,7 @@
     .location {
       font-size: 18px;
       font-weight: 700;
+      opacity: 0;
       // cursor: pointer;
     }
 

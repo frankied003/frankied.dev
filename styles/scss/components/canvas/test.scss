@@ -1,0 +1,25 @@
+.canvas-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .title-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: min-content;
+    position: relative;
+
+    .title {
+      font-size: 52px;
+      font-weight: 700;
+      color: var(--black);
+      overflow: hidden;
+      border-right: 5px solid var(--black);
+      white-space: nowrap;
+      text-align: center;
+    }
+  }
+}
