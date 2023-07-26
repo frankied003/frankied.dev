@@ -38,7 +38,7 @@ export default function Model(props) {
    */
   useFrame((state) => {
     if (props.startAnimations) {
-      state.camera.position.lerp(vec.set(6, 3.5, 3), 0.05);
+      state.camera.position.lerp(vec.set(8, 5, 3), 0.04);
       state.camera.updateProjectionMatrix();
     }
     actions.pan.clampWhenFinished = true;
@@ -57,7 +57,7 @@ export default function Model(props) {
       actions.open.paused = true;
       // Zoom in
       state.camera.fov = THREE.MathUtils.lerp(state.camera.fov, 20, 0.05); // 30 is your desired zoomed-in fov value
-      state.camera.position.lerp(vec.set(6, 4, 3), 0.05);
+      state.camera.position.lerp(vec.set(8, 5.5, 3), 0.05);
       state.camera.updateProjectionMatrix();
 
       // Check if the zoom animation has ended
@@ -74,7 +74,7 @@ export default function Model(props) {
       {...props}
       dispose={null}
       scale={[10, 10, 10]}
-      position={[6, 3.5, 0]}
+      position={[8, 5, 0]}
       rotation={[Math.PI / 1.2, Math.PI / 3, Math.PI / 2.5]}
     >
       {/* <CameraControls ref={cameraControlsRef} /> */}

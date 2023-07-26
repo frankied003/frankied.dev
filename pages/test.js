@@ -4,6 +4,7 @@ import { Stage, ScrollControls } from "@react-three/drei";
 
 import Model from "../components/threeJs/model";
 import Home from ".";
+import ScrollAnimationCtaCanvas from "../components/threeJs/scrollAnimationsCtaCanvas";
 
 export default function Test() {
   const [startAnimations, setStartAnimations] = useState(false);
@@ -21,7 +22,7 @@ export default function Test() {
         {
           width: "100%",
           duration: 2,
-          delay: 2,
+          delay: 1,
         }
       )
       .fromTo(
@@ -33,7 +34,7 @@ export default function Test() {
         {
           "border-right-color": "rgba(0,0,0,0)",
           duration: 0.5,
-          repeat: 12,
+          repeat: 8,
           ease: "none",
           yoyo: true,
         },
@@ -43,14 +44,14 @@ export default function Test() {
         canvasContainerRef.current.querySelector(".title"),
         {
           width: 0,
-          duration: 2,
-          delay: 4,
+          duration: 1,
+          delay: 2.5,
         },
         "<"
       );
     const timeout = setTimeout(() => {
       setStartAnimations(true);
-    }, 8000);
+    }, 4500);
     return () => {
       clearTimeout(timeout);
     };
@@ -64,6 +65,9 @@ export default function Test() {
         <div className="canvas-container" ref={canvasContainerRef}>
           <div className="title-container">
             <p className="title">Frankied.dev</p>
+          </div>
+          <div className="absolute-container">
+            <ScrollAnimationCtaCanvas startAnimations={startAnimations} />
           </div>
           <Canvas style={{ position: "absolute" }} shadows camera={{ fov: 50 }}>
             <Stage

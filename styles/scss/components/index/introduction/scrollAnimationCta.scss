@@ -3,10 +3,5 @@
   transform: translate(-50%, -50%);
   bottom: 3%;
   left: 50%;
-  transition: 2s opacity;
   opacity: 0;
-
-  &.hidden {
-    opacity: 0;
-  }
 }
