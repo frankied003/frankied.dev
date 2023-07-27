@@ -33,7 +33,7 @@ export default function Header() {
       .fromTo(
         headerContainerRef.current,
         { borderBottomColor: "rgb(0,0,0,0)" },
-        { borderBottomColor: "rgb(0,0,0,0.9)", delay: 1 }
+        { borderBottomColor: "rgb(0,0,0,0.9)", delay: 0.5 }
       )
       .fromTo(
         headerContainerRef.current.querySelector(".title"),
@@ -74,7 +74,7 @@ export default function Header() {
           autoAlpha: 1,
           xPercent: 0,
           duration: 0.5,
-          delay: 1,
+          delay: 2.5,
         }
       )
       .fromTo(

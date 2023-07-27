@@ -223,8 +223,8 @@ export default function Model(props) {
               castShadow
               receiveShadow
               geometry={nodes.Text001.geometry}
-              material={materials.bezel}
-              position={[0, 0.106, -0.01]}
+              material={materials.chrome}
+              position={[0, 0.106, -0.009]}
               rotation={[-Math.PI / 2, 0, 0]}
             />
           </group>

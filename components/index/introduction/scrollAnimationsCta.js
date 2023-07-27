@@ -32,8 +32,6 @@ export default function ScrollAnimationCta() {
    * If scrolling, this will remove the lottie animation.
    */
   useEffect(() => {
-    gsap.fromTo(scrollContainerRef.current, { autoAlpha: 0 }, { autoAlpha: 1 });
-
     const checkScroll = () => {
       if (window.scrollY != 0 && !isScrolled) {
         gsap.to(scrollContainerRef.current, { opacity: 0 });
@@ -49,7 +47,7 @@ export default function ScrollAnimationCta() {
   }, []);
 
   return (
-    <div className={`lottie-animation`} ref={scrollContainerRef}>
+    <div className="lottie-animation" ref={scrollContainerRef}>
       <Lottie options={defaultOptions} height={75} width={75} />
     </div>
   );

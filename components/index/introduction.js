@@ -25,14 +25,14 @@ export default function Introduction() {
 
       loadTl
         .fromTo(
-          introductionContainerRef.current,
-          { borderBottomColor: "rgb(0,0,0,0)" },
-          { borderBottomColor: "rgb(0,0,0,0.9)", delay: 1 }
-        )
-        .fromTo(
           introductionContainerRef.current.querySelector(".image-container"),
           { autoAlpha: 0 },
-          { autoAlpha: 1 },
+          { autoAlpha: 1, delay: 0.5 }
+        )
+        .fromTo(
+          introductionContainerRef.current,
+          { borderBottomColor: "rgb(0,0,0,0)" },
+          { borderBottomColor: "rgb(0,0,0,0.9)" },
           "<"
         )
         .fromTo(
@@ -43,13 +43,13 @@ export default function Introduction() {
         .fromTo(
           introductionContainerRef.current.querySelectorAll(".animate"),
           { autoAlpha: 0, y: 50, skewY: 5 },
-          { autoAlpha: 1, y: 0, skewY: 0, stagger: 0.2 }
+          { autoAlpha: 1, y: 0, skewY: 0, stagger: 0.2, delay: 0.35 },
+          "<"
         )
         .fromTo(
           introductionContainerRef.current.querySelector(".lottie-animation"),
           { autoAlpha: 0, y: 50 },
-          { autoAlpha: 1, y: 0 },
-          "<"
+          { autoAlpha: 1, y: 0 }
         );
 
       const scrollTl = gsap.timeline({
