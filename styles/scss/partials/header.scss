@@ -6,9 +6,6 @@
   justify-content: space-between;
   height: 15vh;
   padding: 0vw 3vw;
-  border-bottom: 5px solid rgb(0, 0, 0, 0);
-  z-index: 1000; /* Ensure header is always on top */
-  // background: rgba(255, 255, 255, 0.4);
 
   .title-container {
     align-self: center;
@@ -28,26 +25,12 @@
 
   .right-content {
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+    align-items: center;
     justify-content: center;
-    align-self: flex-end;
-    gap: 5px;
-    margin-bottom: 5px;
 
-    .location {
-      font-size: 18px;
-      font-weight: 700;
-      opacity: 0;
-      // cursor: pointer;
-    }
-
-    .social-media-links-container {
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-end;
-      align-items: center;
-      gap: 10px;
+    .icon {
+      width: 35px;
+      height: auto;
     }
   }
 }

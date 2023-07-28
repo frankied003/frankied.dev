@@ -1,52 +1,79 @@
 .introduction-container {
-  padding-top: 13vh;
   width: 100%;
-  height: 97vh;
+  height: 100vh;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  border-bottom: 5px solid rgb(0, 0, 0, 0);
+  flex-direction: column;
   position: relative;
 
-  .content {
+  .top-content-container {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 50%;
-    height: 50%;
-    gap: 5%;
+    flex-direction: row;
+    height: 75%;
+    width: 100%;
+    padding-left: 10%;
+    padding-top: 6%;
 
-    .intro {
-      font-size: 42px;
-      line-height: 1;
-      color: var(--grey);
-    }
+    .content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 60%;
+      height: 100%;
+      gap: 5%;
 
-    .animate {
-      opacity: 0;
-    }
+      .intro {
+        font-size: 42px;
+        line-height: 1;
+        color: var(--grey);
+      }
 
-    .position-container {
-      height: calc(1.2 * 68px); // font size should be the same
-      overflow: hidden;
+      .animate {
+        // opacity: 0;
+      }
 
-      .position {
-        font-size: 68px;
-        font-weight: 700;
-        color: var(--black);
-        line-height: 1.2;
+      .position-container {
+        height: calc(1.2 * 68px); // font size should be the same
+        overflow: hidden;
+        white-space: nowrap;
+
+        .position {
+          font-size: 68px;
+          font-weight: 700;
+          color: var(--black);
+          line-height: 1.2;
+        }
       }
     }
   }
 
-  .image-container {
-    position: relative;
-    width: 25%;
-    height: 40%;
-    opacity: 0;
+  .scroll-box-container {
+    display: flex;
+    flex: row;
+    width: 100%;
+    height: 25%;
 
-    .image {
-      object-fit: contain;
+    .box {
+      width: 0%;
+      height: 100%;
+      background-color: var(--black);
+    }
+  }
+
+  .flex-image-container {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    width: 40%;
+    height: 75%;
+
+    .image-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+
+      .image {
+        object-fit: contain;
+      }
     }
   }
 }

@@ -25,19 +25,17 @@ export default function Introduction() {
 
       loadTl
         .fromTo(
-          introductionContainerRef.current.querySelector(".image-container"),
+          introductionContainerRef.current.querySelector(
+            ".flex-image-container"
+          ),
           { autoAlpha: 0 },
           { autoAlpha: 1, delay: 0.5 }
         )
         .fromTo(
-          introductionContainerRef.current,
-          { borderBottomColor: "rgb(0,0,0,0)" },
-          { borderBottomColor: "rgb(0,0,0,0.9)" },
-          "<"
-        )
-        .fromTo(
-          introductionContainerRef.current.querySelector(".image-container"),
-          { xPercent: -100 },
+          introductionContainerRef.current.querySelector(
+            ".flex-image-container"
+          ),
+          { xPercent: -70 },
           { xPercent: 0, delay: 0.5 }
         )
         .fromTo(
@@ -63,11 +61,11 @@ export default function Introduction() {
         },
       });
 
-      const imgTl = gsap.timeline();
-      imgTl.to(
-        introductionContainerRef.current.querySelector(".image-container"),
-        { rotate: 90, duration: 4 }
-      );
+      const boxTl = gsap.timeline();
+      boxTl.to(introductionContainerRef.current.querySelector(".box"), {
+        width: "100%",
+        duration: 4,
+      });
 
       const primaryTl = gsap.timeline();
       primaryTl
@@ -105,7 +103,7 @@ export default function Introduction() {
           "<"
         );
 
-      scrollTl.add(imgTl, 0);
+      scrollTl.add(boxTl, 0);
       scrollTl.add(primaryTl, 0);
     });
     return () => ctx.revert();
@@ -113,29 +111,36 @@ export default function Introduction() {
 
   return (
     <div className="introduction-container" ref={introductionContainerRef}>
-      <div className="content">
-        <p className="intro animate">
-          <strong className="what-up">What&apos;s up!</strong>{" "}
-          <span className="title-rest">
-            My name is Frankie DiGiacomo and I am a{" "}
-          </span>
-        </p>
-        <div className="animate">
-          <div className="position-container">
-            <p className="position primary">Full-Stack Developer.</p>
-            <p className="position secondary">UI/UX Designer.</p>
-            <p className="position third">Data Scientist.</p>
+      <div className="top-content-container">
+        <div className="content">
+          <p className="intro animate">
+            <strong className="what-up">What&apos;s up!</strong>{" "}
+            <span className="title-rest">
+              My name is Frankie DiGiacomo and I am a{" "}
+            </span>
+          </p>
+          <div className="animate">
+            <div className="position-container">
+              <p className="position primary">Full-Stack Developer.</p>
+              <p className="position secondary">UI/UX Designer.</p>
+              <p className="position third">Data Scientist.</p>
+            </div>
           </div>
+          <LearnMoreButton />
         </div>
-        <LearnMoreButton />
       </div>
-      <div className="image-container">
-        <Image
-          src="/assets/logo.png"
-          fill
-          alt="Frankied.dev logo"
-          className="image"
-        />
+      <div className="scroll-box-container">
+        <div className="box" />
+      </div>
+      <div className="flex-image-container">
+        <div className="image-container">
+          <Image
+            src="/assets/introduction/character.png"
+            fill
+            alt="Frankied.dev Character"
+            className="image"
+          />
+        </div>
       </div>
       <ScrollAnimationCta />
     </div>
