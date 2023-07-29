@@ -11,9 +11,9 @@ export default function Home() {
       <Header />
       <Introduction />
       <MyProjects />
-      <MySkills />
+      {/* <MySkills />
       <ContactMe />
-      <Footer />
+      <Footer /> */}
     </main>
   );
 }

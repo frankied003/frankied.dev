@@ -11,4 +11,14 @@
     font-size: 18px;
     color: var(--black);
   }
+
+  &.mini {
+    padding: 8px 0px;
+    min-width: 110px;
+
+    .skill-title {
+      font-size: 14px;
+      color: var(--black);
+    }
+  }
 }

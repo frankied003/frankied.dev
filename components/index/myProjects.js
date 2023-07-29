@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import Project from "./myProjects/project";
 
 export default function MyProjects() {
   /**
@@ -51,31 +52,67 @@ export default function MyProjects() {
           "<"
         );
 
-      const bottomScrollTl = gsap.timeline({
-        scrollTrigger: {
-          trigger: projectsContainerRef.current,
-          scrub: 1,
-          pin: true,
-          start: "top top",
-          end: "bottom top",
-          // markers: true,
-        },
-      });
+      // const bottomScrollTl = gsap.timeline({
+      //   scrollTrigger: {
+      //     trigger: projectsContainerRef.current,
+      //     scrub: 1,
+      //     pin: true,
+      //     start: "-20% top",
+      //     end: "80% top",
+      //     markers: true,
+      //   },
+      // });
 
-      bottomScrollTl.fromTo(
-        projectsContainerRef.current.querySelectorAll(".project-container"),
-        { autoAlpha: 0, xPercent: -25, skewX: -5, skewY: 5 },
-        { autoAlpha: 1, xPercent: 0, skewX: 0, skewY: 0, stagger: 0.2 }
-      );
+      // bottomScrollTl.fromTo(
+      //   projectsContainerRef.current.querySelectorAll(".project-container"),
+      //   { autoAlpha: 0, xPercent: -25, skewX: -5, skewY: 5 },
+      //   { autoAlpha: 1, xPercent: 0, skewX: 0, skewY: 0, stagger: 0.2 }
+      // );
     });
     return () => ctx.revert();
   }, []);
 
   return (
     <div className="my-projects-container" ref={projectsContainerRef}>
-      <div className="content">
-        <div className="title-container">
-          <p className="title">My Projects.</p>
+      <div className="title-container">
+        <p className="title">My Projects.</p>
+      </div>
+      <div className="flex-container">
+        <div className="projects-scroll-container">
+          <Project
+            index={0}
+            title={"Isekai Meta / Studio Sekai"}
+            description={
+              "Isekai Meta is a story and community-driven, hand-drawn NFT collection and metaverse brand that has been summoned on the Ethereum blockchain."
+            }
+          />
+        </div>
+        <div className="contributions-container">
+          <div className="contributions-title-container">
+            <p className="title">Contributions.</p>
+          </div>
+          <div className="scroll-container">
+            <p className="description">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin at
+              rutrum justo, non porta diam. Vestibulum vel diam finibus est.
+              Proin at rutrum justo, non porta diam.
+            </p>
+            <p className="description">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin at
+              rutrum justo, non porta diam. Vestibulum vel diam finibus est.
+              Proin at rutrum justo, non porta diam.
+            </p>
+            <p className="description">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin at
+              rutrum justo, non porta diam. Vestibulum vel diam finibus est.
+              Proin at rutrum justo, non porta diam.
+            </p>
+            <p className="description">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin at
+              rutrum justo, non porta diam. Vestibulum vel diam finibus est.
+              Proin at rutrum justo, non porta diam.
+            </p>
+          </div>
         </div>
       </div>
     </div>

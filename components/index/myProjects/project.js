@@ -5,6 +5,7 @@ import Image from "next/image";
  * Icon imports.
  */
 import { BsArrowRight } from "react-icons/bs";
+import Skill from "../mySkills/skill";
 
 export default function Project(props) {
   const cardRef = useRef(null);
@@ -52,15 +53,27 @@ export default function Project(props) {
 
   return (
     <div className={`project-container ${props.projectClass}`} ref={cardRef}>
-      <div className="image-container">
-        <Image src={props.src} fill alt="Frankied Project" className="image" />
-      </div>
       <div className="content-container">
         <div className="details-container">
+          <p className="number">0{props.index + 1}.</p>
           <p className="title">{props.title}</p>
-          <p className="role">{props.role}</p>
+          <p className="description">{props.description}</p>
         </div>
-        <BsArrowRight className="icon" />
+        <div className="bottom-skills-container">
+          <Skill mini title="React.JS" />
+          <Skill mini title="React.JS" />
+          <Skill mini title="React.JS" />
+          <Skill mini title="React.JS" />
+          <Skill mini title="React.JS" />
+        </div>
+      </div>
+      <div className="image-container">
+        <Image
+          src={"/assets/projects/isekaimeta1.png"}
+          fill
+          alt="Frankied Project"
+          className="image"
+        />
       </div>
     </div>
   );
