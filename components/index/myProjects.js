@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import Project from "./myProjects/project";
 
-export default function MyProjects() {
+export default function MyProjects(props) {
   /**
    * Reference for gsap animations.
    */
@@ -20,7 +20,7 @@ export default function MyProjects() {
           trigger: projectsContainerRef.current,
           scrub: 1,
           start: "top bottom",
-          end: "80% bottom",
+          end: "90% bottom",
           // markers: true,
         },
       });
@@ -50,24 +50,35 @@ export default function MyProjects() {
             yoyo: true,
           },
           "<"
+        )
+        .fromTo(
+          projectsContainerRef.current.querySelector(
+            ".projects-scroll-container"
+          ),
+          {
+            autoAlpha: 0,
+          },
+          {
+            autoAlpha: 1,
+            duration: 3,
+          },
+          "<"
+        )
+        .fromTo(
+          projectsContainerRef.current.querySelector(
+            ".contributions-container"
+          ),
+          {
+            autoAlpha: 0,
+            y: 200,
+          },
+          {
+            autoAlpha: 1,
+            y: 0,
+            duration: 3,
+          },
+          "<"
         );
-
-      // const bottomScrollTl = gsap.timeline({
-      //   scrollTrigger: {
-      //     trigger: projectsContainerRef.current,
-      //     scrub: 1,
-      //     pin: true,
-      //     start: "-20% top",
-      //     end: "80% top",
-      //     markers: true,
-      //   },
-      // });
-
-      // bottomScrollTl.fromTo(
-      //   projectsContainerRef.current.querySelectorAll(".project-container"),
-      //   { autoAlpha: 0, xPercent: -25, skewX: -5, skewY: 5 },
-      //   { autoAlpha: 1, xPercent: 0, skewX: 0, skewY: 0, stagger: 0.2 }
-      // );
     });
     return () => ctx.revert();
   }, []);
@@ -81,6 +92,31 @@ export default function MyProjects() {
         <div className="projects-scroll-container">
           <Project
             index={0}
+            classIndex={"one"}
+            title={"Isekai Meta / Studio Sekai"}
+            description={
+              "Isekai Meta is a story and community-driven, hand-drawn NFT collection and metaverse brand that has been summoned on the Ethereum blockchain."
+            }
+          />
+          <Project
+            index={1}
+            classIndex={"two"}
+            title={"onBoard LLC"}
+            description={
+              "The very first modular surfboard that fits in a carry-on suitcase to improve board performance and decrease travel costs and struggle."
+            }
+          />
+          <Project
+            index={2}
+            classIndex={"three"}
+            title={"Isekai Meta / Studio Sekai"}
+            description={
+              "Isekai Meta is a story and community-driven, hand-drawn NFT collection and metaverse brand that has been summoned on the Ethereum blockchain."
+            }
+          />
+          <Project
+            index={3}
+            classIndex={"four"}
             title={"Isekai Meta / Studio Sekai"}
             description={
               "Isekai Meta is a story and community-driven, hand-drawn NFT collection and metaverse brand that has been summoned on the Ethereum blockchain."
@@ -92,22 +128,22 @@ export default function MyProjects() {
             <p className="title">Contributions.</p>
           </div>
           <div className="scroll-container">
-            <p className="description">
+            <p className="description desc-one">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin at
               rutrum justo, non porta diam. Vestibulum vel diam finibus est.
               Proin at rutrum justo, non porta diam.
             </p>
-            <p className="description">
+            <p className="description desc-two">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin at
               rutrum justo, non porta diam. Vestibulum vel diam finibus est.
               Proin at rutrum justo, non porta diam.
             </p>
-            <p className="description">
+            <p className="description desc-three">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin at
               rutrum justo, non porta diam. Vestibulum vel diam finibus est.
               Proin at rutrum justo, non porta diam.
             </p>
-            <p className="description">
+            <p className="description desc-four">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin at
               rutrum justo, non porta diam. Vestibulum vel diam finibus est.
               Proin at rutrum justo, non porta diam.

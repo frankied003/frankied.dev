@@ -1,7 +1,12 @@
 .my-skills-container {
-  width: 100%;
-  min-height: 100vh;
+  width: 50%;
+  height: 100vh;
   position: relative;
+  background-color: var(--white);
+  padding-top: 3%;
+  padding-left: 1%;
+  padding-right: 1%;
+  padding-bottom: 1%;
 
   .content {
     width: 100%;
