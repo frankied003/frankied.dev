@@ -27,7 +27,7 @@ export default function MyProjects(props) {
 
       topRowScrollTl
         .fromTo(
-          projectsContainerRef.current.querySelector(".title"),
+          projectsContainerRef.current.querySelector(".my-projects-title"),
           {
             width: 0,
           },
@@ -38,7 +38,7 @@ export default function MyProjects(props) {
           "<"
         )
         .fromTo(
-          projectsContainerRef.current.querySelector(".title"),
+          projectsContainerRef.current.querySelector(".my-projects-title"),
           {
             "border-right-color": "rgba(0,0,0,0.75)",
           },
@@ -86,7 +86,7 @@ export default function MyProjects(props) {
   return (
     <div className="my-projects-container" ref={projectsContainerRef}>
       <div className="title-container">
-        <p className="title">My Projects.</p>
+        <p className="title my-projects-title">My Projects.</p>
       </div>
       <div className="flex-container">
         <div className="projects-scroll-container">

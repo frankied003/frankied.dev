@@ -27,6 +27,7 @@ export default function Home() {
       scrollTl
 
         // The project scrolling.
+        // Two.
         .to(mainContainerRef.current.querySelector(".project-container.one"), {
           y: "-10%",
           delay: 0.35,
@@ -68,6 +69,8 @@ export default function Home() {
           },
           "<"
         )
+
+        // Three.
         .to(mainContainerRef.current.querySelector(".project-container.two"), {
           y: "-115%",
           delay: 0.35,
@@ -109,6 +112,8 @@ export default function Home() {
           },
           "<"
         )
+
+        // Four.
         .to(
           mainContainerRef.current.querySelector(".project-container.three"),
           {
@@ -153,12 +158,30 @@ export default function Home() {
           },
           "<"
         )
+
         // Page scrolling.
+        // Animate of project section to collapse faster.
         .to(mainContainerRef.current.querySelector(".main-flex-row"), {
           x: "-50%",
           delay: 0.25,
-          duration: 3,
+          duration: 4,
         })
+        .to(
+          mainContainerRef.current.querySelector(".my-projects-title"),
+          {
+            x: "250%",
+            duration: 4,
+          },
+          "<"
+        )
+        .to(
+          mainContainerRef.current.querySelector(".projects-scroll-container"),
+          {
+            x: "20%",
+            duration: 4,
+          },
+          "<"
+        )
 
         // Skills page animation.
         .fromTo(
@@ -215,6 +238,27 @@ export default function Home() {
             stagger: 0.2,
           },
           "<0.5"
+        )
+        // Closing of computer.
+        // Header shrinks as well as skills container page.
+        .to(
+          mainContainerRef.current.querySelector(
+            ".my-skills-container .content"
+          ),
+          {
+            scale: 0.75,
+            opacity: 0,
+            duration: 1,
+          }
+        )
+        .to(
+          mainContainerRef.current.querySelector(".header-container"),
+          {
+            scale: 0.75,
+            opacity: 0,
+            duration: 1,
+          },
+          "<"
         );
     });
     return () => ctx.revert();
