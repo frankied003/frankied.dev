@@ -3,7 +3,6 @@ import "../styles/config.scss";
 import { useRouter } from "next/router";
 import Script from "next/script";
 import { useEffect, useRef } from "react";
-import Background from "../partials/background";
 import Cursor from "../components/cursor";
 
 function MyApp({ Component, pageProps }) {
@@ -39,7 +38,6 @@ function MyApp({ Component, pageProps }) {
         src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"
         strategy="beforeInteractive"
       ></Script>
-      <Background />
       {/* <Cursor /> */}
       <Component {...pageProps} />
     </>

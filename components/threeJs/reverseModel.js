@@ -17,6 +17,9 @@ export default function ReverseModel(props) {
 
   const vec = new THREE.Vector3();
 
+  // Decide the point at which you want the pan and open animations to stop. Here it's set at 80% of the scroll offset.
+  const animationEndOffset = 0.98;
+
   useEffect(() => {
     gsap.timeline().to(group.current.position, {
       x: 0,
@@ -29,21 +32,18 @@ export default function ReverseModel(props) {
     actions.open.startAt(actions.open._clip.duration);
   }, [props]);
 
-  // Decide the point at which you want the pan and open animations to stop. Here it's set at 80% of the scroll offset.
-  const animationEndOffset = 0.98;
-
   /**
    * Animation of position back to center
    */
-  useFrame((state) => {
+  useFrame(() => {
     if (scroll.offset < animationEndOffset) {
+      actions.pan.play();
+      actions.open.play();
       actions.pan.time =
         actions.pan._clip.duration - scroll.offset * actions.pan._clip.duration;
       actions.open.time =
         actions.open._clip.duration -
         scroll.offset * actions.open._clip.duration;
-      actions.pan.play();
-      actions.open.play();
     } else {
       actions.pan.paused = true;
       actions.open.paused = true;
@@ -56,9 +56,9 @@ export default function ReverseModel(props) {
       {...props}
       dispose={null}
       scale={[10, 10, 10]}
-      position={[0, 0, 6]}
+      position={[0, 0, 5.5]}
+      rotation={[0, 0, 0]}
     >
-      {/* <CameraControls ref={cameraControlsRef} /> */}
       <group name="Scene">
         <group name="MacGroup" scale={[0.16, 0.14, 0.24]}>
           <group

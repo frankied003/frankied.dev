@@ -1,5 +1,11 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 
 export default function Background() {
-  return <div className="background-container" />;
+  const backgroundRef = useRef(null);
+
+  useEffect(() => {
+    gsap.to(backgroundRef.current, { opacity: 1, delay: 1, duration: 3 });
+  }, []);
+
+  return <div className="background-container" ref={backgroundRef} />;
 }

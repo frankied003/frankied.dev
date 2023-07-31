@@ -73,7 +73,6 @@ export default function Model(props) {
       position={[8, 5, 0]}
       rotation={[Math.PI / 1.2, Math.PI / 3, Math.PI / 2.5]}
     >
-      {/* <CameraControls ref={cameraControlsRef} /> */}
       <group name="Scene">
         <group name="MacGroup" scale={[0.16, 0.14, 0.24]}>
           <group

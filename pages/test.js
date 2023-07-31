@@ -63,7 +63,13 @@ export default function Test() {
     <>
       {revealWebsite ? (
         revealComputer ? (
-          <Canvas style={{ position: "absolute" }} shadows camera={{ fov: 50 }}>
+          <Canvas
+            style={{
+              position: "absolute",
+            }}
+            shadows
+            camera={{ fov: 50 }}
+          >
             <Stage
               preset="rembrandt"
               intensity={1}

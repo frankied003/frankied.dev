@@ -4,6 +4,7 @@ import Introduction from "../components/index/introduction";
 import MyProjects from "../components/index/myProjects";
 import MySkills from "../components/index/mySkills";
 import Header from "../partials/header";
+import Background from "../partials/background";
 
 export default function Home(props) {
   const mainContainerRef = useRef(null);
@@ -267,6 +268,7 @@ export default function Home(props) {
 
   return (
     <main className="home" ref={mainContainerRef}>
+      <Background />
       <Header />
       <Introduction />
       <div className="main-flex-row">
