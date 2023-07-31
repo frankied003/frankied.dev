@@ -151,24 +151,24 @@ export default function MyProjects(props) {
           </div>
           <div className="scroll-container">
             <p className="description desc-one">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin at
-              rutrum justo, non porta diam. Vestibulum vel diam finibus est.
-              Proin at rutrum justo, non porta diam.
+              Ex-CoFounder and CTO. Recruited a team of 2+ developers, oversaw
+              and participated in the art generation, smart contract
+              development, and website creation.
             </p>
             <p className="description desc-two">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin at
-              rutrum justo, non porta diam. Vestibulum vel diam finibus est.
-              Proin at rutrum justo, non porta diam.
+              Main developer. Developed and designed a fully-functional,
+              pleasing, website including a dynamic "Design your Board", page
+              using React and GSAP.
             </p>
             <p className="description desc-three">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin at
-              rutrum justo, non porta diam. Vestibulum vel diam finibus est.
-              Proin at rutrum justo, non porta diam.
+              Founder and app creator. Developed a fully functionality mobile
+              app from idea creation to business plan, down to the code and
+              infrastructure of the application .
             </p>
             <p className="description desc-four">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin at
-              rutrum justo, non porta diam. Vestibulum vel diam finibus est.
-              Proin at rutrum justo, non porta diam.
+              Mobile developer. Created and designed an online / offline React
+              Native application that is curated for drivers of oil companies to
+              deliver oil.
             </p>
           </div>
         </div>

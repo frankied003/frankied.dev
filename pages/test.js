@@ -5,10 +5,12 @@ import { Stage, ScrollControls } from "@react-three/drei";
 import Model from "../components/threeJs/model";
 import Home from ".";
 import ScrollAnimationCtaCanvas from "../components/threeJs/scrollAnimationsCtaCanvas";
+import ReverseModel from "../components/threeJs/reverseModel";
 
 export default function Test() {
   const [startAnimations, setStartAnimations] = useState(false);
   const [revealWebsite, setRevealWebsite] = useState(false);
+  const [revealComputer, setRevealComputer] = useState(false);
   const canvasContainerRef = useRef(null);
 
   useEffect(() => {
@@ -60,7 +62,20 @@ export default function Test() {
   return (
     <>
       {revealWebsite ? (
-        <Home />
+        revealComputer ? (
+          <Canvas style={{ position: "absolute" }} shadows camera={{ fov: 50 }}>
+            <Stage
+              preset="rembrandt"
+              intensity={1}
+              environment="sunset"
+            ></Stage>
+            <ScrollControls pages={2} damping={0.25}>
+              <ReverseModel />
+            </ScrollControls>
+          </Canvas>
+        ) : (
+          <Home setRevealComputer={() => setRevealComputer(true)} />
+        )
       ) : (
         <div className="canvas-container" ref={canvasContainerRef}>
           <div className="title-container">

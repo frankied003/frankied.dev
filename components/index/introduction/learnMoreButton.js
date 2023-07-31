@@ -63,12 +63,6 @@ export default function LearnMoreButton() {
 
     buttonRef.current.addEventListener("mousemove", handleMouseMove);
     buttonRef.current.addEventListener("mouseleave", handleMouseLeave);
-
-    // Clean up the event listener on component unmount
-    return () => {
-      buttonRef.current.removeEventListener("mousemove", handleMouseMove);
-      buttonRef.current.removeEventListener("mouseleave", handleMouseLeave);
-    };
   }, []);
 
   return (

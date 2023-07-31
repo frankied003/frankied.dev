@@ -5,7 +5,7 @@ import MyProjects from "../components/index/myProjects";
 import MySkills from "../components/index/mySkills";
 import Header from "../partials/header";
 
-export default function Home() {
+export default function Home(props) {
   const mainContainerRef = useRef(null);
 
   useEffect(() => {
@@ -22,6 +22,7 @@ export default function Home() {
           end: "+=3500",
           // markers: true,
         },
+        onComplete: props.setRevealComputer,
       });
 
       scrollTl
