@@ -97,6 +97,15 @@ export default function MyProjects(props) {
             description={
               "Isekai Meta is a story and community-driven, hand-drawn NFT collection and metaverse brand that has been summoned on the Ethereum blockchain."
             }
+            skills={[
+              "React.JS",
+              "JavaScript",
+              "Solidity",
+              "Python",
+              "Vercel",
+              "Digital Ocean",
+            ]}
+            imageSrc={"/assets/projects/isekaimeta1.png"}
           />
           <Project
             index={1}
@@ -105,22 +114,35 @@ export default function MyProjects(props) {
             description={
               "The very first modular surfboard that fits in a carry-on suitcase to improve board performance and decrease travel costs and struggle."
             }
+            skills={["React.JS", "JavaScript", "Vercel"]}
+            imageSrc={"/assets/projects/onBoard.png"}
           />
           <Project
             index={2}
             classIndex={"three"}
-            title={"Isekai Meta / Studio Sekai"}
+            title={"Voleious"}
             description={
-              "Isekai Meta is a story and community-driven, hand-drawn NFT collection and metaverse brand that has been summoned on the Ethereum blockchain."
+              "Voleious is an online chat and interaction social media app that encourages discussions of any topic. Our goal is to get people discussing, so start discussing!"
             }
+            skills={["React Native", "Postgress", "Firebase", "Digital Ocean"]}
+            imageSrc={"/assets/projects/voleious.png"}
+            contain
           />
           <Project
             index={3}
             classIndex={"four"}
-            title={"Isekai Meta / Studio Sekai"}
+            title={"DigiSevn Delivery System"}
             description={
-              "Isekai Meta is a story and community-driven, hand-drawn NFT collection and metaverse brand that has been summoned on the Ethereum blockchain."
+              "DigiSevn Delivery System is a SAAS enterprise that provides software solutions for commercial and residential deliveries of Oil."
             }
+            skills={[
+              "React Native",
+              "JavaScript",
+              "Java",
+              "Postgress",
+              "Supabase",
+            ]}
+            imageSrc={"/assets/projects/digiSevn.png"}
           />
         </div>
         <div className="contributions-container">

@@ -18,19 +18,17 @@ export default function Project(props) {
           <p className="description">{props.description}</p>
         </div>
         <div className="bottom-skills-container">
-          <Skill mini title="React.JS" />
-          <Skill mini title="React.JS" />
-          <Skill mini title="React.JS" />
-          <Skill mini title="React.JS" />
-          <Skill mini title="React.JS" />
+          {props.skills.map((skill) => (
+            <Skill mini title={skill} key={skill} />
+          ))}
         </div>
       </div>
       <div className="image-container">
         <Image
-          src={"/assets/projects/isekaimeta1.png"}
+          src={props.imageSrc}
           fill
           alt="Frankied Project"
-          className="image"
+          className={`image ${props.contain ? "contain" : null}`}
         />
       </div>
     </div>
