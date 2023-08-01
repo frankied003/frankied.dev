@@ -10,6 +10,16 @@ export default function Home(props) {
   const mainContainerRef = useRef(null);
 
   useEffect(() => {
+    /**
+     * If reversed order, start at the bottom of the scroll container.
+     * +2000 is there from
+     */
+    // if (props.reverseOrder) {
+    //   setTimeout(() => {
+    //     window.scrollTo(0, document.body.scrollHeight - 500);
+    //   }, 100);
+    // }
+
     // Scroll animation
     gsap.registerPlugin(ScrollTrigger);
 

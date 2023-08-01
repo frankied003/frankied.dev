@@ -15,6 +15,13 @@ export default function ReverseModel(props) {
   const { actions } = useAnimations(animations, group);
   const scroll = useScroll();
 
+  /**
+   * State for scrollbar value.
+   */
+  const [scrollOffsetThresholdMet, setScrollOffsetThresholdMet] =
+    useState(false);
+  const threshold = 0.25;
+
   const vec = new THREE.Vector3();
 
   // Decide the point at which you want the pan and open animations to stop. Here it's set at 80% of the scroll offset.
@@ -25,8 +32,7 @@ export default function ReverseModel(props) {
       x: 0,
       y: 0,
       z: 3,
-      duration: 2,
-      delay: 1,
+      duration: 1,
     });
     actions.pan.startAt(actions.pan._clip.duration);
     actions.open.startAt(actions.open._clip.duration);
@@ -35,7 +41,36 @@ export default function ReverseModel(props) {
   /**
    * Animation of position back to center
    */
-  useFrame(() => {
+  useFrame((state) => {
+    /**
+     * Want the zoom back in to start after we start scrolling so we
+     * have this state here to make sure it's only when they scroll
+     * back to the top and not just initial onLoad since useFrame is
+     * ran instantly.
+     * This makes sure we go past the 25% mark.
+     */
+    if (scroll.offset > threshold) {
+      setScrollOffsetThresholdMet(true);
+    }
+
+    /**
+     * Head back into the website again in reverse order.
+     */
+    if (scroll.offset < 0.02 && scrollOffsetThresholdMet) {
+      actions.pan.paused = true;
+      actions.open.paused = true;
+
+      state.camera.fov = THREE.MathUtils.lerp(state.camera.fov, 20, 0.05);
+      state.camera.updateProjectionMatrix();
+
+      if (state.camera.fov <= 20.05) {
+        props.revealWebsite();
+      }
+    }
+
+    /**
+     * Playing of animation.
+     */
     if (scroll.offset < animationEndOffset) {
       actions.pan.play();
       actions.open.play();
@@ -45,6 +80,9 @@ export default function ReverseModel(props) {
         actions.open._clip.duration -
         scroll.offset * actions.open._clip.duration;
     } else {
+      /**
+       * When at the bottom of the scroll.
+       */
       actions.pan.paused = true;
       actions.open.paused = true;
     }

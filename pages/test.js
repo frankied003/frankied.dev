@@ -11,6 +11,7 @@ export default function Test() {
   const [startAnimations, setStartAnimations] = useState(false);
   const [revealWebsite, setRevealWebsite] = useState(false);
   const [revealComputer, setRevealComputer] = useState(false);
+  const [reverseOrder, setReverseOrder] = useState(false);
   const canvasContainerRef = useRef(null);
 
   useEffect(() => {
@@ -76,11 +77,19 @@ export default function Test() {
               environment="sunset"
             ></Stage>
             <ScrollControls pages={2} damping={0.25}>
-              <ReverseModel />
+              <ReverseModel
+                revealWebsite={() => {
+                  setRevealComputer(false);
+                  setReverseOrder(true);
+                }}
+              />
             </ScrollControls>
           </Canvas>
         ) : (
-          <Home setRevealComputer={() => setRevealComputer(true)} />
+          <Home
+            setRevealComputer={() => setRevealComputer(true)}
+            reverseOrder={reverseOrder}
+          />
         )
       ) : (
         <div className="canvas-container" ref={canvasContainerRef}>
