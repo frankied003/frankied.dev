@@ -1,0 +1,37 @@
+.social-media-link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 10%;
+  cursor: pointer;
+
+  .left-container {
+    display: flex;
+    align-items: center;
+    gap: 3vw;
+
+    .social-text {
+      color: var(--white);
+      font-size: 4.5vw;
+      font-weight: 700;
+    }
+
+    .icon {
+      width: 2vw;
+      height: auto;
+      color: var(--white);
+      transition: 0.2s;
+
+      &:hover {
+        width: 4vw;
+      }
+    }
+  }
+
+  .arrow-icon {
+    width: 5vw;
+    height: auto;
+    color: var(--white);
+  }
+}

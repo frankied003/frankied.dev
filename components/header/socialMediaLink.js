@@ -1,14 +1,18 @@
-import Link from "next/link";
 import React from "react";
+
+/**
+ * Icon imports.
+ */
 
 export default function SocialMediaLink(props) {
   const { icon, link } = props;
 
   return (
-    <div className="social-media-link">
-      <Link href={link} target="#">
+    <a className="social-media-link" href={link} target="#">
+      <div className="left-container">
         {icon}
-      </Link>
-    </div>
+        <p className="social-text">{props.text}</p>
+      </div>
+    </a>
   );
 }
