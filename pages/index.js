@@ -26,8 +26,8 @@ export default function Home(props) {
   return (
     <main className="home" ref={mainContainerRef}>
       <Background />
-      <Header menuOpen={menuOpen} />
-      <Menu setMenuClosed={() => setMenuOpen(false)} />
+      <Header setMenuOpen={() => setMenuOpen(true)} />
+      <Menu setMenuClosed={() => setMenuOpen(false)} menuOpen={menuOpen} />
       <Introduction />
       <div className="main-flex-row">
         <MyProjects parentRef={mainContainerRef} />

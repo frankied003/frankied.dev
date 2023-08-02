@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import SocialMediaLink from "./socialMediaLink";
 
 /**
@@ -14,8 +14,61 @@ import { BsDiscord, BsArrowUpShort } from "react-icons/bs";
 import { FaEthereum } from "react-icons/fa";
 
 export default function Menu(props) {
+  const menuContainerRef = useRef(null);
+
+  /**
+   * UseEffect for menu animation with GSAP.
+   */
+  useEffect(() => {
+    const tl = gsap.timeline();
+    if (props.menuOpen) {
+      tl.to(menuContainerRef.current, {
+        height: "100vh",
+      })
+        .fromTo(
+          menuContainerRef.current.querySelectorAll(".social-media-link"),
+          {
+            clipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
+            y: 50,
+            skewY: 3,
+          },
+          {
+            clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+            y: 0,
+            skewY: 0,
+            duration: 1,
+            stagger: 0.1,
+          },
+          "<0.2"
+        )
+        .to(menuContainerRef.current.querySelector(".copyright"), {
+          autoAlpha: 1,
+        });
+    } else {
+      tl.to(menuContainerRef.current.querySelectorAll(".social-media-link"), {
+        clipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
+        y: -50,
+        stagger: 0.1,
+      })
+        .to(
+          menuContainerRef.current.querySelector(".copyright"),
+          {
+            autoAlpha: 0,
+          },
+          "<0.5"
+        )
+        .to(
+          menuContainerRef.current,
+          {
+            height: "0vh",
+          },
+          "<"
+        );
+    }
+  }, [props.menuOpen]);
+
   return (
-    <div className="menu-container">
+    <div className="menu-container" ref={menuContainerRef}>
       <div className="social-media-container">
         <SocialMediaLink
           icon={<AiFillGithub className="icon" />}
@@ -49,7 +102,10 @@ export default function Menu(props) {
         />
       </div>
       <div className="close">
-        <BsArrowUpShort className="icon" />
+        <BsArrowUpShort
+          className="icon"
+          onClick={() => props.setMenuClosed()}
+        />
       </div>
       <p className="copyright">Created by Frankied.dev</p>
     </div>

@@ -6,7 +6,7 @@ import Link from "next/link";
  */
 import { MdMenu } from "react-icons/md";
 
-export default function Header() {
+export default function Header(props) {
   const headerContainerRef = useRef();
 
   /**
@@ -72,7 +72,7 @@ export default function Header() {
         <p className="title">Frankied.dev</p>
       </Link>
       <div className="right-content">
-        <MdMenu className="icon" />
+        <MdMenu className="icon" onClick={() => props.setMenuOpen()} />
       </div>
     </div>
   );
