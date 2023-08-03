@@ -1,0 +1,29 @@
+.topic {
+  cursor: pointer;
+  transition: 0.2s;
+
+  &.active {
+    opacity: 1;
+  }
+
+  &.non-active {
+    opacity: 0.25;
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+
+  .number {
+    font-size: 16px;
+    color: var(--black);
+    margin-right: 2%;
+  }
+
+  .title {
+    font-size: 72px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--black);
+  }
+}

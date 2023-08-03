@@ -23,8 +23,8 @@
       z-index: 2;
 
       .intro {
-        width: 90%;
-        font-size: 48px;
+        width: 75%;
+        font-size: 42px;
         line-height: 1;
         color: var(--grey);
       }
@@ -34,12 +34,12 @@
       }
 
       .position-container {
-        height: calc(1.2 * 86px); // font size should be the same
+        height: calc(1.2 * 72px); // font size should be the same
         overflow: hidden;
         white-space: nowrap;
 
         .position {
-          font-size: 86px;
+          font-size: 72px;
           font-weight: 700;
           color: var(--black);
           line-height: 1.2;

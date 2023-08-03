@@ -16,6 +16,7 @@ import Menu from "../components/header/menu";
  * and redundant).
  */
 import { useScrollAnimations } from "../components/animations/main";
+import BioSection from "../components/index/bioSection";
 
 export default function Home(props) {
   const mainContainerRef = useRef(null);
@@ -29,6 +30,7 @@ export default function Home(props) {
       <Header setMenuOpen={() => setMenuOpen(true)} />
       <Menu setMenuClosed={() => setMenuOpen(false)} menuOpen={menuOpen} />
       <Introduction />
+      <BioSection />
       <div className="main-flex-row">
         <MyProjects parentRef={mainContainerRef} />
         <MySkills />
