@@ -1,7 +1,7 @@
 .my-projects-container {
   width: 50%;
   height: 100vh;
-  background-color: var(--white);
+  background-color: white;
   position: relative;
   padding-top: 3%;
   padding-left: 1%;
@@ -56,6 +56,7 @@
       padding-top: 1.5%;
       user-select: none;
       pointer-events: none;
+      filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 
       .contributions-title-container {
         width: 100%;

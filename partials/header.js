@@ -4,7 +4,7 @@ import Link from "next/link";
 /**
  * Icon imports.
  */
-import { MdMenu } from "react-icons/md";
+import { BsArrowDownShort } from "react-icons/bs";
 
 export default function Header(props) {
   const headerContainerRef = useRef();
@@ -72,7 +72,10 @@ export default function Header(props) {
         <p className="title">Frankied.dev</p>
       </Link>
       <div className="right-content">
-        <MdMenu className="icon" onClick={() => props.setMenuOpen()} />
+        <BsArrowDownShort
+          className="icon"
+          onClick={() => props.setMenuOpen()}
+        />
       </div>
     </div>
   );

@@ -4,8 +4,6 @@
   position: fixed;
   top: 0px;
   left: 0px;
-  background-image: url("../../../public/assets/background.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  opacity: 0;
+  background-color: var(--white);
+  opacity: 1;
 }
