@@ -5,6 +5,8 @@ import react, { useEffect, useRef, useState } from "react";
  */
 import Introduction from "../components/index/introduction";
 import MyProjects from "../components/index/myProjects";
+import BioSection from "../components/index/bioSection";
+import ScrollText from "../components/index/scrollText";
 import MySkills from "../components/index/mySkills";
 import Header from "../partials/header";
 import Background from "../partials/background";
@@ -16,7 +18,6 @@ import Menu from "../components/header/menu";
  * and redundant).
  */
 import { useScrollAnimations } from "../components/animations/main";
-import BioSection from "../components/index/bioSection";
 
 export default function Home(props) {
   const mainContainerRef = useRef(null);
@@ -31,6 +32,7 @@ export default function Home(props) {
       <Menu setMenuClosed={() => setMenuOpen(false)} menuOpen={menuOpen} />
       <Introduction />
       <BioSection />
+      <ScrollText />
       <div className="main-flex-row">
         <MyProjects parentRef={mainContainerRef} />
         <MySkills />

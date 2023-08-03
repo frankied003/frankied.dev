@@ -62,8 +62,8 @@ export default function BioSection() {
       tl1
         .fromTo(
           imageSectionRef.current,
-          { autoAlpha: 1, x: 0 },
-          { autoAlpha: 0, x: "-25%" }
+          { autoAlpha: 1, x: 0, rotate: 0 },
+          { autoAlpha: 0, x: "-25%", rotate: -10 }
         )
         .fromTo(
           descriptionRef.current,
@@ -82,8 +82,14 @@ export default function BioSection() {
         )
         .fromTo(
           imageSectionRef.current,
-          { autoAlpha: 0, x: "-25%" },
-          { autoAlpha: 1, x: 0, ease: "back.out(1.7)", delay: 0.1 }
+          { autoAlpha: 0, x: "-25%", rotate: -10 },
+          {
+            autoAlpha: 1,
+            x: 0,
+            rotate: 0,
+            duration: 0.6,
+            ease: "back.out(1.7)",
+          }
         )
         .fromTo(
           descriptionRef.current,
@@ -102,7 +108,7 @@ export default function BioSection() {
     gsap.registerPlugin(ScrollTrigger);
 
     let ctx = gsap.context(() => {
-      const scrollTl = gsap.timeline({
+      const scrollPageTl = gsap.timeline({
         scrollTrigger: {
           trigger: bioSectionContainerRef.current,
           scrub: 1,
@@ -111,7 +117,7 @@ export default function BioSection() {
           //   markers: true,
         },
       });
-      const scrollTl2 = gsap.timeline({
+      const loadingScrollTl = gsap.timeline({
         scrollTrigger: {
           trigger: bioSectionContainerRef.current,
           start: "35% bottom",
@@ -119,16 +125,29 @@ export default function BioSection() {
           //   markers: true,
         },
       });
+      const leavingPageTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: bioSectionContainerRef.current,
+          scrub: 1,
+          start: "top top",
+          end: "bottom top",
+          toggleActions: "play none none reverse",
+          // markers: true,
+        },
+      });
 
       /**
        * Top of section parallax effect.
        */
-      scrollTl.to(bioSectionContainerRef.current, { y: "-25%", ease: "none" });
+      scrollPageTl.to(bioSectionContainerRef.current, {
+        y: "-25%",
+        ease: "none",
+      });
 
       /**
        * Loading animations into the screen.
        */
-      scrollTl2
+      loadingScrollTl
         .fromTo(
           bioSectionContainerRef.current.querySelector(".top"),
           { autoAlpha: 0, y: 25, skewY: 3 },
@@ -138,7 +157,7 @@ export default function BioSection() {
           bioSectionContainerRef.current.querySelectorAll(".topic"),
           {
             clipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
-            y: -50,
+            y: 50,
             skewY: 3,
           },
           {
@@ -158,9 +177,34 @@ export default function BioSection() {
         )
         .fromTo(
           bioSectionContainerRef.current.querySelector(".image-container"),
-          { autoAlpha: 0, x: "-25%" },
-          { autoAlpha: 1, x: 0, ease: "back.out(1.7)" },
+          { autoAlpha: 0, x: "-25%", rotate: -10 },
+          {
+            autoAlpha: 1,
+            x: 0,
+            rotate: 0,
+            duration: 0.6,
+            ease: "back.out(1.7)",
+          },
           "<0.5"
+        );
+
+      /**
+       * Leaving page animations. (Scrolling to next section)
+       */
+      leavingPageTl
+        .to(bioSectionContainerRef.current.querySelector(".image-container"), {
+          autoAlpha: 1,
+          x: "-10%",
+          y: "-10%",
+          rotate: -30,
+        })
+        .to(
+          bioSectionContainerRef.current.querySelector(".project-description"),
+          {
+            autoAlpha: 1,
+            x: "10%",
+          },
+          "<"
         );
     });
     return () => ctx.revert();
