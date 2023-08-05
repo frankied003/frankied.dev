@@ -14,6 +14,11 @@ export default function Introduction() {
   const introductionContainerRef = useRef(null);
 
   /**
+   * Animation progress number state.
+   */
+  const [animationProgress, setAnimationProgress] = useState(0);
+
+  /**
    * GSAP animations.
    */
   useEffect(() => {
@@ -45,6 +50,14 @@ export default function Introduction() {
           "<"
         )
         .fromTo(
+          introductionContainerRef.current.querySelector(
+            ".animation-progress-number"
+          ),
+          { autoAlpha: 0, x: "-50%" },
+          { autoAlpha: 1, x: 0, ease: "back.out(1.7)" },
+          "<"
+        )
+        .fromTo(
           introductionContainerRef.current.querySelector(".lottie-animation"),
           { autoAlpha: 0, y: 50 },
           { autoAlpha: 1, y: 0 }
@@ -58,14 +71,26 @@ export default function Introduction() {
           start: "15% 15%",
           end: "+=2000",
           // markers: true,
+          onUpdate: (self) => {
+            if (self.progress > 1) {
+              setAnimationProgress(0);
+            } else {
+              setAnimationProgress((self.progress * 100).toFixed(0));
+            }
+          },
         },
       });
 
-      const boxTl = gsap.timeline();
-      boxTl.to(introductionContainerRef.current.querySelector(".box"), {
-        width: "100%",
-        duration: 4,
-      });
+      const numberTl = gsap.timeline();
+      numberTl.to(
+        introductionContainerRef.current.querySelector(
+          ".animation-progress-number"
+        ),
+        {
+          width: "35%",
+          duration: 4,
+        }
+      );
 
       const primaryTl = gsap.timeline();
       primaryTl
@@ -103,7 +128,7 @@ export default function Introduction() {
           "<"
         );
 
-      scrollTl.add(boxTl, 0);
+      scrollTl.add(numberTl, 0);
       scrollTl.add(primaryTl, 0);
     });
     return () => ctx.revert();
@@ -129,8 +154,11 @@ export default function Introduction() {
           <LearnMoreButton />
         </div>
       </div>
-      <div className="scroll-box-container">
-        <div className="box" />
+      <div className="number-container">
+        <p className="animation-progress-number">
+          {animationProgress}
+          <span>%</span>
+        </p>
       </div>
       <div className="flex-image-container">
         <div className="image-container">

@@ -48,9 +48,15 @@ export default function ReverseModel(props) {
      * back to the top and not just initial onLoad since useFrame is
      * ran instantly.
      * This makes sure we go past the 25% mark.
+     * As well as start to move object.
      */
     if (scroll.offset > threshold) {
       setScrollOffsetThresholdMet(true);
+      // group.current.position.set(
+      //   -3 * scroll.offset,
+      //   1 * scroll.offset,
+      //   3 * scroll.offset
+      // );
     }
 
     /**
@@ -69,7 +75,7 @@ export default function ReverseModel(props) {
     }
 
     /**
-     * Playing of animation.
+     * Playing of animation. And camera view.
      */
     if (scroll.offset < animationEndOffset) {
       actions.pan.play();
@@ -79,12 +85,15 @@ export default function ReverseModel(props) {
       actions.open.time =
         actions.open._clip.duration -
         scroll.offset * actions.open._clip.duration;
+      // props.setEditable(false);
+      // props.setContactOpacity(scroll.offset);
     } else {
       /**
        * When at the bottom of the scroll.
        */
       actions.pan.paused = true;
       actions.open.paused = true;
+      // props.setEditable(true);
     }
   });
 
