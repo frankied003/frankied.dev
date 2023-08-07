@@ -1,5 +1,10 @@
 import React, { useEffect, useRef } from "react";
+
+/**
+ * Components imports.
+ */
 import Skill from "./mySkills/skill";
+import GithubBadge from "./mySkills/githubBadge";
 
 export default function MySkills() {
   /**
@@ -34,70 +39,6 @@ export default function MySkills() {
    */
   const mySkillsContainerRef = useRef(null);
 
-  // /**
-  //  * GSAP animations.
-  //  */
-  // useEffect(() => {
-  //   // Scroll animation
-  //   gsap.registerPlugin(ScrollTrigger);
-
-  //   let ctx = gsap.context(() => {
-  //     const topRowScrollTl = gsap.timeline({
-  //       scrollTrigger: {
-  //         trigger: mySkillsContainerRef.current,
-  //         scrub: 1,
-  //         start: "top bottom",
-  //         end: "+=4000",
-  //         markers: true,
-  //       },
-  //     });
-
-  //     topRowScrollTl
-  //       .fromTo(
-  //         mySkillsContainerRef.current.querySelector(".title"),
-  //         {
-  //           width: 0,
-  //         },
-  //         {
-  //           width: "100%",
-  //           duration: 2,
-  //           delay: 2,
-  //         }
-  //       )
-  //       .fromTo(
-  //         mySkillsContainerRef.current.querySelector(".title"),
-  //         {
-  //           "border-right-color": "rgba(0,0,0,0.75)",
-  //         },
-  //         {
-  //           "border-right-color": "rgba(0,0,0,0)",
-  //           duration: 0.5,
-  //           repeat: 4,
-  //           ease: "none",
-  //           yoyo: true,
-  //         },
-  //         "<"
-  //       )
-  //       .fromTo(
-  //         mySkillsContainerRef.current.querySelectorAll(
-  //           ".skill-section .title"
-  //         ),
-  //         {
-  //           autoAlpha: 0,
-  //           x: -50,
-  //         },
-  //         {
-  //           autoAlpha: 1,
-  //           x: 0,
-  //           duration: 2,
-  //           stagger: 0.2,
-  //         },
-  //         "<"
-  //       );
-  //   });
-  //   return () => ctx.revert();
-  // }, []);
-
   return (
     <div className="my-skills-container" ref={mySkillsContainerRef}>
       <div className="content">
@@ -124,6 +65,7 @@ export default function MySkills() {
             </div>
           </div>
         </div>
+        <GithubBadge />
       </div>
     </div>
   );
