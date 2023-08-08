@@ -28,20 +28,6 @@
     transform: translateY(-200%);
   }
 
-  .image-container {
-    width: 43%;
-    height: 100%;
-    position: relative;
-
-    .image {
-      object-fit: cover;
-
-      &.contain {
-        object-fit: contain;
-      }
-    }
-  }
-
   .content-container {
     width: 55%;
     height: 100%;
@@ -85,6 +71,20 @@
       flex-direction: row;
       flex-wrap: wrap;
       gap: 10px;
+    }
+  }
+
+  .image-container {
+    width: 43%;
+    height: 100%;
+    position: relative;
+
+    .image {
+      object-fit: cover;
+
+      &.contain {
+        object-fit: contain;
+      }
     }
   }
 }

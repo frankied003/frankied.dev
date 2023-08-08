@@ -15,17 +15,7 @@ export default function ReverseModel(props) {
   const { actions } = useAnimations(animations, group);
   const scroll = useScroll();
 
-  /**
-   * State for scrollbar value.
-   */
-  const [scrollOffsetThresholdMet, setScrollOffsetThresholdMet] =
-    useState(false);
-  const threshold = 0.25;
-
   const vec = new THREE.Vector3();
-
-  // Decide the point at which you want the pan and open animations to stop. Here it's set at 80% of the scroll offset.
-  const animationEndOffset = 0.98;
 
   useEffect(() => {
     gsap.timeline().to(group.current.position, {
@@ -36,33 +26,14 @@ export default function ReverseModel(props) {
     });
     actions.pan.startAt(actions.pan._clip.duration);
     actions.open.startAt(actions.open._clip.duration);
+    setAnimationComplete(true);
   }, [props]);
 
-  /**
-   * Animation of position back to center
-   */
   useFrame((state) => {
-    /**
-     * Want the zoom back in to start after we start scrolling so we
-     * have this state here to make sure it's only when they scroll
-     * back to the top and not just initial onLoad since useFrame is
-     * ran instantly.
-     * This makes sure we go past the 25% mark.
-     * As well as start to move object.
-     */
-    if (scroll.offset > threshold) {
-      setScrollOffsetThresholdMet(true);
-      // group.current.position.set(
-      //   -3 * scroll.offset,
-      //   1 * scroll.offset,
-      //   3 * scroll.offset
-      // );
-    }
-
     /**
      * Head back into the website again in reverse order.
      */
-    if (scroll.offset < 0.02 && scrollOffsetThresholdMet) {
+    if (props.revealWebsite) {
       actions.pan.paused = true;
       actions.open.paused = true;
 
@@ -74,26 +45,18 @@ export default function ReverseModel(props) {
       }
     }
 
+    actions.pan.play();
+    actions.open.play();
+    actions.pan.time =
+      actions.pan._clip.duration - scroll.offset * actions.pan._clip.duration;
+    actions.open.time =
+      actions.open._clip.duration - scroll.offset * actions.open._clip.duration;
+
     /**
-     * Playing of animation. And camera view.
+     * If animation end
      */
-    if (scroll.offset < animationEndOffset) {
-      actions.pan.play();
-      actions.open.play();
-      actions.pan.time =
-        actions.pan._clip.duration - scroll.offset * actions.pan._clip.duration;
-      actions.open.time =
-        actions.open._clip.duration -
-        scroll.offset * actions.open._clip.duration;
-      // props.setEditable(false);
-      // props.setContactOpacity(scroll.offset);
-    } else {
-      /**
-       * When at the bottom of the scroll.
-       */
-      actions.pan.paused = true;
-      actions.open.paused = true;
-      // props.setEditable(true);
+    if (actions.pan.time == actions.pan._clip.duration) {
+      props.revealContact();
     }
   });
 

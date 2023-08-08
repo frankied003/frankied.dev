@@ -8,6 +8,7 @@ import { BsArrowDownShort } from "react-icons/bs";
 
 export default function Header(props) {
   const headerContainerRef = useRef();
+  const [lastScrollY, setLastScrollY] = useState(0); // State to track last scroll position
 
   /**
    * GSAP animations.
@@ -65,6 +66,39 @@ export default function Header(props) {
       }
     );
   }, []);
+
+  /**
+   * GSAP animations for showing and hiding the header.
+   */
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     const currentScrollY = window.scrollY;
+
+  //     /**
+  //      * Scrolled up vs. scrolled down.
+  //      */
+  //     if (currentScrollY > lastScrollY && currentScrollY > 2000) {
+  //       gsap.to(headerContainerRef.current, {
+  //         y: "-100%",
+  //         duration: 1,
+  //       });
+  //     } else {
+  //       gsap.to(headerContainerRef.current, {
+  //         y: "0%",
+  //         duration: 1,
+  //       });
+  //     }
+
+  //     // Update the last scroll position
+  //     setLastScrollY(currentScrollY);
+  //   };
+
+  //   window.addEventListener("scroll", handleScroll);
+
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, [lastScrollY]);
 
   return (
     <div className="header-container" ref={headerContainerRef}>

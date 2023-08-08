@@ -31,7 +31,6 @@
     align-items: center;
     justify-content: center;
     position: absolute;
-    transition: 0.2s;
 
     transform-origin: center; /* Ensure it rotates around its center */
     animation: rotateCounterClockwise 20s linear infinite;

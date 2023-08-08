@@ -12,13 +12,11 @@ export default function Test() {
   const [startAnimations, setStartAnimations] = useState(false);
   const [revealWebsite, setRevealWebsite] = useState(true);
   const [revealComputer, setRevealComputer] = useState(true);
-  const [reverseOrder, setReverseOrder] = useState(false);
 
   /**
    * For contact page.
    */
-  const [editable, setEditable] = useState(false);
-  const [contactOpacity, setContactOpacity] = useState(0);
+  const [revealContact, setRevealContact] = useState(false);
   const canvasContainerRef = useRef(null);
 
   /**
@@ -94,20 +92,17 @@ export default function Test() {
                 <ReverseModel
                   revealWebsite={() => {
                     setRevealComputer(false);
-                    setReverseOrder(true);
                   }}
-                  // setEditable={(boolean) => setEditable(boolean)}
-                  // setContactOpacity={(value) => setContactOpacity(value + 0.02)}
+                  revealContact={() => {
+                    setRevealContact(true);
+                  }}
                 />
               </ScrollControls>
             </Canvas>
-            <Contact editable={editable} opacity={contactOpacity} />
+            <Contact revealContact={revealContact} />
           </div>
         ) : (
-          <Home
-            setRevealComputer={() => setRevealComputer(true)}
-            reverseOrder={reverseOrder}
-          />
+          <Home setRevealComputer={() => setRevealComputer(true)} />
         )
       ) : (
         <div className="canvas-container" ref={canvasContainerRef}>

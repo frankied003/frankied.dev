@@ -20,19 +20,15 @@ export default function Contact(props) {
    * GSAP animations.
    */
   useEffect(() => {
-    // Scroll animation
-    gsap.registerPlugin(ScrollTrigger);
-
-    let ctx = gsap.context(() => {});
-    return () => ctx.revert();
-  }, []);
+    if (props.revealContact) {
+      gsap.to(contactContainerRef.current, { autoAlpha: 1 });
+    } else {
+      gsap.to(contactContainerRef.current, { autoAlpha: 0 });
+    }
+  }, [props.revealContact]);
 
   return (
-    <div
-      className="contact-container"
-      // style={{ opacity: props.opacity }}
-      ref={contactContainerRef}
-    >
+    <div className="contact-container" ref={contactContainerRef}>
       <div className="content">
         <div className="top-flex-row">
           <p className="contact-title">Contact Me.</p>
