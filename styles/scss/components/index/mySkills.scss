@@ -1,68 +1,56 @@
 .my-skills-container {
-  width: 50%;
+  width: 100%;
   height: 100vh;
   position: relative;
-  background-color: var(--snow);
-  padding-top: 3%;
-  padding-left: 1%;
-  padding-right: 1%;
+  padding-top: 7%;
+  padding-left: 3%;
+  padding-right: 3%;
   padding-bottom: 1%;
+  display: flex;
+  flex-direction: column;
 
-  .content {
-    width: 100%;
-    height: 100%;
-    position: relative;
+  .title-container {
+    width: fit-content;
+
+    .title {
+      font-size: 58px;
+      font-weight: 200;
+      color: var(--black);
+      padding-right: 5px;
+      // cursor: pointer;
+      overflow: hidden;
+      border-right: 5px solid rgba(0, 0, 0, 0.75);
+      white-space: nowrap;
+    }
+  }
+
+  .skill-section-container {
+    width: 75%;
+    height: 80%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    align-self: center;
 
-    .top-flex-row {
+    .skill-section {
       width: 100%;
-      display: flex;
-      flex-direction: row;
-      align-items: flex-start;
-      justify-content: space-between;
+      margin-bottom: 2%;
 
-      .title-container {
-        width: fit-content;
+      .title {
+        font-size: 28px;
+        color: var(--black);
         margin-bottom: 25px;
-
-        .title {
-          font-size: 64px;
-          font-weight: 200;
-          color: var(--black);
-          padding-right: 5px;
-          // cursor: pointer;
-          overflow: hidden;
-          border-right: 5px solid rgba(0, 0, 0, 0.75);
-          white-space: nowrap;
-        }
       }
-    }
 
-    .skill-section-container {
-      width: 75%;
-      height: 100%;
-
-      .skill-section {
+      .skills-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
         width: 100%;
-        margin-bottom: 2%;
-
-        .title {
-          font-size: 28px;
-          color: var(--black);
-          margin-bottom: 25px;
-        }
-
-        .skills-container {
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          justify-content: center;
-          width: 100%;
-          gap: 20px;
-          flex-wrap: wrap;
-        }
+        gap: 20px;
+        flex-wrap: wrap;
       }
     }
   }

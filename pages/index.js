@@ -18,6 +18,7 @@ import Menu from "../components/header/menu";
  * and redundant).
  */
 import { useScrollAnimations } from "../components/animations/main";
+import MidSection from "../components/index/midSection";
 
 export default function Home(props) {
   const mainContainerRef = useRef(null);
@@ -33,10 +34,13 @@ export default function Home(props) {
       <Introduction />
       <BioSection />
       <ScrollText />
-      <div className="main-flex-row">
+      <MyProjects parentRef={mainContainerRef} />
+      {/* <MidSection /> */}
+      <MySkills />
+      {/* <div className="main-flex-row">
         <MyProjects parentRef={mainContainerRef} />
         <MySkills />
-      </div>
+      </div> */}
     </main>
   );
 }

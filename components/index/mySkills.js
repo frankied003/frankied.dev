@@ -41,32 +41,30 @@ export default function MySkills() {
 
   return (
     <div className="my-skills-container" ref={mySkillsContainerRef}>
-      <div className="content">
-        <div className="top-flex-row">
-          <div className="title-container">
-            <p className="title my-skills-title">My Skills.</p>
-          </div>
+      <div className="top-flex-row">
+        <div className="title-container">
+          <p className="title my-skills-title">My Skills.</p>
         </div>
-        <div className="skill-section-container">
-          <div className="skill-section">
-            <p className="title">Languages</p>
-            <div className="skills-container">
-              {skillsObj.map((skill) => (
-                <Skill title={skill} />
-              ))}
-            </div>
-          </div>
-          <div className="skill-section">
-            <p className="title">Software</p>
-            <div className="skills-container">
-              {softwareObj.map((skill) => (
-                <Skill title={skill} />
-              ))}
-            </div>
-          </div>
-        </div>
-        <GithubBadge />
       </div>
+      <div className="skill-section-container">
+        <div className="skill-section">
+          <p className="title">Languages</p>
+          <div className="skills-container">
+            {skillsObj.map((skill) => (
+              <Skill title={skill} />
+            ))}
+          </div>
+        </div>
+        <div className="skill-section">
+          <p className="title">Software</p>
+          <div className="skills-container">
+            {softwareObj.map((skill) => (
+              <Skill title={skill} />
+            ))}
+          </div>
+        </div>
+      </div>
+      <GithubBadge />
     </div>
   );
 }
