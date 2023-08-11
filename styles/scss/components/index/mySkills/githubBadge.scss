@@ -1,9 +1,10 @@
 .github-badge-container {
   position: absolute;
-  bottom: 3%;
+  bottom: -15%;
   right: 3%;
-  width: 9vw;
-  height: 9vw;
+  width: 15vw;
+  height: 15vw;
+  z-index: 2;
   cursor: pointer;
 
   .github-icon-container {
@@ -36,7 +37,7 @@
     animation: rotateCounterClockwise 20s linear infinite;
 
     .circleText {
-      font-size: 1.05vw;
+      font-size: 1.38vw;
       font-family: var(--body);
       font-weight: 200;
     }

@@ -8,6 +8,7 @@ import MyProjects from "../components/index/myProjects";
 import BioSection from "../components/index/bioSection";
 import ScrollText from "../components/index/scrollText";
 import MySkills from "../components/index/mySkills";
+import Footer from "../components/index/footer";
 import Header from "../partials/header";
 import Background from "../partials/background";
 import Menu from "../components/header/menu";
@@ -37,6 +38,7 @@ export default function Home(props) {
       <MyProjects parentRef={mainContainerRef} />
       {/* <MidSection /> */}
       <MySkills />
+      <Footer />
       {/* <div className="main-flex-row">
         <MyProjects parentRef={mainContainerRef} />
         <MySkills />

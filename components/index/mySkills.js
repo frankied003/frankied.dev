@@ -39,6 +39,82 @@ export default function MySkills() {
    */
   const mySkillsContainerRef = useRef(null);
 
+  useEffect(() => {
+    // Scroll animation
+    gsap.registerPlugin(ScrollTrigger);
+
+    let ctx = gsap.context(() => {
+      const topRowScrollTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: mySkillsContainerRef.current,
+          start: "25% bottom",
+          toggleActions: "play none none reverse",
+          // markers: true,
+        },
+      });
+
+      topRowScrollTl
+        .fromTo(
+          mySkillsContainerRef.current.querySelector(".my-skills-title"),
+          {
+            width: 0,
+          },
+          {
+            width: "100%",
+            duration: 2,
+          },
+          "<"
+        )
+        .fromTo(
+          mySkillsContainerRef.current.querySelector(".my-skills-title"),
+          {
+            "border-right-color": "rgba(0,0,0,0.75)",
+          },
+          {
+            "border-right-color": "rgba(0,0,0,0)",
+            duration: 0.5,
+            repeat: 4,
+            ease: "none",
+            yoyo: true,
+          },
+          "<"
+        )
+        .fromTo(
+          mySkillsContainerRef.current.querySelectorAll(
+            ".skill-section .title"
+          ),
+          {
+            autoAlpha: 0,
+            x: -50,
+          },
+          {
+            autoAlpha: 1,
+            x: 0,
+            duration: 2,
+            stagger: 0.2,
+          },
+          "<"
+        )
+        .fromTo(
+          mySkillsContainerRef.current.querySelectorAll(
+            ".skills-container .skill-container"
+          ),
+          {
+            autoAlpha: 0,
+            x: -50,
+          },
+          {
+            autoAlpha: 1,
+            x: 0,
+            duration: 0.5,
+            stagger: 0.1,
+          },
+          "<0.5"
+        );
+    });
+    return () => ctx.revert();
+  }, []);
+
   return (
     <div className="my-skills-container" ref={mySkillsContainerRef}>
       <div className="top-flex-row">
