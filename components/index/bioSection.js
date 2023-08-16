@@ -140,7 +140,7 @@ export default function BioSection() {
        * Top of section parallax effect.
        */
       scrollPageTl.to(bioSectionContainerRef.current, {
-        y: "-25%",
+        y: "-10%",
         ease: "none",
       });
 
