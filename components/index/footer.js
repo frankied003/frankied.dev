@@ -26,14 +26,19 @@ export default function Footer() {
 
   return (
     <div className="footer-container">
-      <p className="copyright">©2023 Frankied.dev, All Rights Reserved</p>
-      <div className="time-container">
-        <p className="time">
-          My Time: <strong>{myTime}</strong>
-        </p>
-        <p className="time">
-          Your Time: <strong>{yourTime}</strong>
-        </p>
+      <div className="top-footer-container">
+        <p className="title">Frankied.dev</p>
+      </div>
+      <div className="bottom-footer-container">
+        <p className="copyright">©2023 Frankied.dev, All Rights Reserved</p>
+        <div className="time-container">
+          <p className="time">
+            My Time: <strong>{myTime}</strong>
+          </p>
+          <p className="time">
+            Your Time: <strong>{yourTime}</strong>
+          </p>
+        </div>
       </div>
     </div>
   );
