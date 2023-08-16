@@ -6,6 +6,7 @@ import Image from "next/image";
  */
 import ScrollAnimationCta from "./introduction/scrollAnimationsCta";
 import LearnMoreButton from "./introduction/learnMoreButton";
+import HeroImage from "./introduction/heroImage";
 
 export default function Introduction() {
   /**
@@ -28,20 +29,16 @@ export default function Introduction() {
     let ctx = gsap.context(() => {
       const loadTl = gsap.timeline();
 
+      /**
+       * Loading trigger.
+       */
       loadTl
         .fromTo(
           introductionContainerRef.current.querySelector(
             ".flex-image-container"
           ),
           { autoAlpha: 0 },
-          { autoAlpha: 1, delay: 0.5 }
-        )
-        .fromTo(
-          introductionContainerRef.current.querySelector(
-            ".flex-image-container"
-          ),
-          { xPercent: -70 },
-          { xPercent: 0, delay: 0.5 }
+          { autoAlpha: 1, duration: 1, delay: 0.5 }
         )
         .fromTo(
           introductionContainerRef.current.querySelectorAll(".animate"),
@@ -63,6 +60,9 @@ export default function Introduction() {
           { autoAlpha: 1, y: 0 }
         );
 
+      /**
+       * Main box trigger.
+       */
       const scrollTl = gsap.timeline({
         scrollTrigger: {
           trigger: introductionContainerRef.current,
@@ -81,6 +81,9 @@ export default function Introduction() {
         },
       });
 
+      /**
+       * For the number animation and it's container.
+       */
       const numberTl = gsap.timeline();
       numberTl.to(
         introductionContainerRef.current.querySelector(
@@ -92,6 +95,9 @@ export default function Introduction() {
         }
       );
 
+      /**
+       * For the animation of the positions.
+       */
       const primaryTl = gsap.timeline();
       primaryTl
         .to(
@@ -160,16 +166,7 @@ export default function Introduction() {
           <span>%</span>
         </p>
       </div>
-      <div className="flex-image-container">
-        <div className="image-container">
-          <Image
-            src="/assets/introduction/character.png"
-            fill
-            alt="Frankied.dev Character"
-            className="image"
-          />
-        </div>
-      </div>
+      <HeroImage />
       <ScrollAnimationCta />
     </div>
   );
