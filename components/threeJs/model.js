@@ -23,7 +23,7 @@ export default function Model(props) {
         x: 0,
         y: 0,
         z: 0,
-        duration: 2,
+        duration: 1.5,
         delay: 1,
       });
     }

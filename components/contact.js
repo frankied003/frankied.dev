@@ -11,8 +11,43 @@ export default function Contact(props) {
   const [number, setNumber] = useState("");
   const [description, setDescription] = useState("");
 
+  const contactContainerRef = useRef(null);
+
+  /**
+   * Loading animations.
+   */
+  useEffect(() => {
+    let ctx = gsap.context(() => {
+      const tl = gsap.timeline();
+      tl.to(contactContainerRef.current, {
+        autoAlpha: 1,
+      })
+        .fromTo(
+          contactContainerRef.current.querySelectorAll(".top-flex-row"),
+          {
+            autoAlpha: 0,
+          },
+          {
+            autoAlpha: 1,
+          },
+          "<0.25"
+        )
+        .fromTo(
+          contactContainerRef.current.querySelector(".form-container"),
+          {
+            autoAlpha: 0,
+          },
+          {
+            autoAlpha: 1,
+          },
+          "<"
+        );
+    });
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <div className="contact-container">
+    <div className="contact-container" ref={contactContainerRef}>
       <div className="content">
         <div className="top-flex-row">
           <p className="contact-title">Contact Me.</p>
