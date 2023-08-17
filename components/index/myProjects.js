@@ -36,16 +36,6 @@ export default function MyProjects(props) {
         },
       });
 
-      const endScrollTl = gsap.timeline({
-        scrollTrigger: {
-          trigger: projectsContainerRef.current,
-          scrub: 1,
-          start: "bottom 99%",
-          end: "+=2500",
-          // markers: true,
-        },
-      });
-
       topRowScrollTl
         .fromTo(
           projectsContainerRef.current.querySelector(
@@ -216,7 +206,12 @@ export default function MyProjects(props) {
             duration: 1.5,
           },
           "<"
-        );
+        )
+
+        // gap at the end for more smoothness
+        .to(projectsContainerRef.current, {
+          duration: 0.5,
+        });
     });
     return () => ctx.revert();
   }, []);

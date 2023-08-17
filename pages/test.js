@@ -7,8 +7,8 @@ import Home from ".";
 import ScrollAnimationCtaCanvas from "../components/threeJs/scrollAnimationsCtaCanvas";
 
 export default function Test() {
-  const [startAnimations, setStartAnimations] = useState(true);
-  const [revealWebsite, setRevealWebsite] = useState(true);
+  const [startAnimations, setStartAnimations] = useState(false);
+  const [revealWebsite, setRevealWebsite] = useState(false);
 
   /**
    * For contact page.
