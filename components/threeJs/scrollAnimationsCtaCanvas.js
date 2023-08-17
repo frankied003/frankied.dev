@@ -32,18 +32,13 @@ export default function ScrollAnimationCtaCanvas(props) {
     if (props.startAnimations) {
       gsap
         .timeline()
-        .to(scrollContainerRef.current, { autoAlpha: 1, duration: 2 })
-        .to(scrollContainerRef.current, {
-          autoAlpha: 0,
-          delay: 4,
-          duration: 2,
-        });
+        .to(scrollContainerRef.current, { autoAlpha: 1, duration: 2 });
     }
   }, [props.startAnimations]);
 
   return (
     <div className={`lottie-animation`} ref={scrollContainerRef}>
-      <Lottie options={defaultOptions} height={75} width={100} />
+      <Lottie options={defaultOptions} height={90} width={125} />
     </div>
   );
 }

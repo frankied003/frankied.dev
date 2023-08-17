@@ -29,7 +29,7 @@ export default function Test() {
           },
           {
             width: "100%",
-            duration: 2,
+            duration: 1.5,
             delay: 1,
           }
         )
@@ -42,7 +42,7 @@ export default function Test() {
           {
             "border-right-color": "rgba(0,0,0,0)",
             duration: 0.5,
-            repeat: 8,
+            repeat: 6,
             ease: "none",
             yoyo: true,
           },
@@ -53,13 +53,13 @@ export default function Test() {
           {
             width: 0,
             duration: 1,
-            delay: 2.5,
+            delay: 1.8,
           },
           "<"
         );
       const timeout = setTimeout(() => {
         setStartAnimations(true);
-      }, 4500);
+      }, 3500);
       return () => {
         clearTimeout(timeout);
       };
