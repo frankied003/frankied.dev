@@ -5,18 +5,14 @@ import { Stage, ScrollControls } from "@react-three/drei";
 import Model from "../components/threeJs/model";
 import Home from ".";
 import ScrollAnimationCtaCanvas from "../components/threeJs/scrollAnimationsCtaCanvas";
-import ReverseModel from "../components/threeJs/reverseModel";
-import Contact from "../components/contact";
 
 export default function Test() {
-  const [startAnimations, setStartAnimations] = useState(false);
+  const [startAnimations, setStartAnimations] = useState(true);
   const [revealWebsite, setRevealWebsite] = useState(true);
-  const [revealComputer, setRevealComputer] = useState(true);
 
   /**
    * For contact page.
    */
-  const [revealContact, setRevealContact] = useState(false);
   const canvasContainerRef = useRef(null);
 
   /**
@@ -68,42 +64,12 @@ export default function Test() {
         clearTimeout(timeout);
       };
     }
-  }, [canvasContainerRef.current]);
+  }, []);
 
   return (
     <>
       {revealWebsite ? (
-        revealComputer ? (
-          <div className="canvas-container">
-            <Canvas
-              style={{
-                position: "absolute",
-                zIndex: 0,
-              }}
-              shadows
-              camera={{ fov: 50 }}
-            >
-              <Stage
-                preset="rembrandt"
-                intensity={1}
-                environment="sunset"
-              ></Stage>
-              <ScrollControls pages={2} damping={0.25}>
-                <ReverseModel
-                  revealWebsite={() => {
-                    setRevealComputer(false);
-                  }}
-                  revealContact={() => {
-                    setRevealContact(true);
-                  }}
-                />
-              </ScrollControls>
-            </Canvas>
-            <Contact revealContact={revealContact} />
-          </div>
-        ) : (
-          <Home setRevealComputer={() => setRevealComputer(true)} />
-        )
+        <Home />
       ) : (
         <div className="canvas-container" ref={canvasContainerRef}>
           <div className="title-container">

@@ -11,24 +11,8 @@ export default function Contact(props) {
   const [number, setNumber] = useState("");
   const [description, setDescription] = useState("");
 
-  /**
-   * Reference for gsap animations.
-   */
-  const contactContainerRef = useRef(null);
-
-  /**
-   * GSAP animations.
-   */
-  useEffect(() => {
-    if (props.revealContact) {
-      gsap.to(contactContainerRef.current, { autoAlpha: 1 });
-    } else {
-      gsap.to(contactContainerRef.current, { autoAlpha: 0 });
-    }
-  }, [props.revealContact]);
-
   return (
-    <div className="contact-container" ref={contactContainerRef}>
+    <div className="contact-container">
       <div className="content">
         <div className="top-flex-row">
           <p className="contact-title">Contact Me.</p>

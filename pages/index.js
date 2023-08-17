@@ -12,25 +12,22 @@ import Footer from "../components/index/footer";
 import Header from "../partials/header";
 import Background from "../partials/background";
 import Menu from "../components/header/menu";
-
-/**
- * Animation imports.
- * (Used a separate file here since the gsap code was so long
- * and redundant).
- */
-import { useScrollAnimations } from "../components/animations/main";
-import MidSection from "../components/index/midSection";
+import Contact from "../components/contact";
 
 export default function Home(props) {
   const mainContainerRef = useRef(null);
   const [menuOpen, setMenuOpen] = useState(false);
-
-  useScrollAnimations(mainContainerRef, props.setRevealComputer);
+  const [contactOpen, setContactOpen] = useState(false);
 
   return (
     <main className="home" ref={mainContainerRef}>
       <Background />
-      <Header setMenuOpen={() => setMenuOpen(true)} />
+      <Header
+        setMenuOpen={() => setMenuOpen(true)}
+        setContactOpen={() => setContactOpen(true)}
+        setContactClose={() => setContactOpen(false)}
+        contactOpened={contactOpen}
+      />
       <Menu setMenuClosed={() => setMenuOpen(false)} menuOpen={menuOpen} />
       <Introduction />
       <BioSection />
@@ -39,7 +36,6 @@ export default function Home(props) {
         text2={"My Work • My Projects • My Work • My Projects • My Work •"}
       />
       <MyProjects parentRef={mainContainerRef} />
-      {/* <MidSection /> */}
       <ScrollText
         text1={
           "My Skills - My Passions - My Skills - My Passions - My Skills -"
@@ -51,6 +47,9 @@ export default function Home(props) {
       />
       <MySkills />
       <Footer />
+      {contactOpen ? (
+        <Contact setContactClosed={() => setContactOpen(false)} />
+      ) : null}
     </main>
   );
 }

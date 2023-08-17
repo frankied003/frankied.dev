@@ -1,0 +1,16 @@
+.contact-me-button-container {
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+  background-color: var(--snow);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  padding: 10px 15px;
+
+  .text {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--black);
+  }
+}

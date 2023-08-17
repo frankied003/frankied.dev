@@ -6,6 +6,7 @@
   .title {
     font-size: 20px;
     margin-bottom: 5px;
+    color: var(--snow);
   }
 
   .input {
@@ -31,8 +32,8 @@
     }
 
     .submit-button {
-      background-color: var(--black);
-      color: var(--white);
+      background-color: var(--snow);
+      color: var(--snow);
       font-size: 18px;
       writing-mode: vertical-rl;
       text-orientation: upright;
