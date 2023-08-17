@@ -154,7 +154,7 @@ export default function BioSection() {
           { autoAlpha: 1, y: 0, skewY: 0 }
         )
         .fromTo(
-          bioSectionContainerRef.current.querySelectorAll(".topic"),
+          bioSectionContainerRef.current.querySelectorAll(".topic .title"),
           {
             clipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
             y: 50,

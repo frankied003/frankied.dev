@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 
-export default function ScrollText() {
+export default function ScrollText(props) {
   /**
    * Reference for centerImageContainer for animations.
    */
@@ -45,11 +45,11 @@ export default function ScrollText() {
 
   return (
     <div className="scroll-text-container" ref={scrollTextContainerRef}>
-      <p className="left-scroll-text">
-        My Projects - My Work - My Projects - My Work - My Projects -
+      <p className={props.opposite ? "right-scroll-text" : "left-scroll-text"}>
+        {props.text1}
       </p>
-      <p className="right-scroll-text">
-        My Skills • My Hobbies • My Skills • My Hobbies • My Skills •
+      <p className={props.opposite ? "left-scroll-text" : "right-scroll-text"}>
+        {props.text2}
       </p>
     </div>
   );

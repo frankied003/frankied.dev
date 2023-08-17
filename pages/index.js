@@ -34,15 +34,23 @@ export default function Home(props) {
       <Menu setMenuClosed={() => setMenuOpen(false)} menuOpen={menuOpen} />
       <Introduction />
       <BioSection />
-      <ScrollText />
+      <ScrollText
+        text1={"My Projects - My Work - My Projects - My Work - My Projects -"}
+        text2={"My Work • My Projects • My Work • My Projects • My Work •"}
+      />
       <MyProjects parentRef={mainContainerRef} />
       {/* <MidSection /> */}
+      <ScrollText
+        text1={
+          "My Skills - My Passions - My Skills - My Passions - My Skills -"
+        }
+        text2={
+          "My Passions • My Skills • My Passions • My Skills • My Passions -"
+        }
+        opposite
+      />
       <MySkills />
       <Footer />
-      {/* <div className="main-flex-row">
-        <MyProjects parentRef={mainContainerRef} />
-        <MySkills />
-      </div> */}
     </main>
   );
 }
