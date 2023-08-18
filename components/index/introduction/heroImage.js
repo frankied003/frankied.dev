@@ -59,19 +59,19 @@ export default function HeroImage() {
     <div className="flex-image-container">
       <div className="image-container">
         <Image
-          src="/assets/introduction/frankied_bg.png"
+          src="/assets/introduction/frankied_bg.webp"
           fill
           alt="Frankied.dev Background"
           className="image image-1"
         />
         <Image
-          src="/assets/introduction/frankied_char.png"
+          src="/assets/introduction/frankied_char.webp"
           fill
           alt="Frankied.dev Character"
           className="image image-2"
         />
         <Image
-          src="/assets/introduction/frankied_laptop.png"
+          src="/assets/introduction/frankied_laptop.webp"
           fill
           alt="Frankied.dev Laptop"
           className="image image-3"

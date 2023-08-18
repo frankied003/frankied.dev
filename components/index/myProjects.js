@@ -235,7 +235,7 @@ export default function MyProjects(props) {
               "Vercel",
               "Digital Ocean",
             ]}
-            imageSrc={"/assets/projects/isekaimeta1.png"}
+            imageSrc={"/assets/projects/isekaimeta.webp"}
           />
           <Project
             index={1}
@@ -245,7 +245,7 @@ export default function MyProjects(props) {
               "The very first modular surfboard that fits in a carry-on suitcase to improve board performance and decrease travel costs and struggle."
             }
             skills={["React.JS", "JavaScript", "Vercel"]}
-            imageSrc={"/assets/projects/onBoard.png"}
+            imageSrc={"/assets/projects/onBoard.webp"}
           />
           <Project
             index={2}
@@ -255,7 +255,7 @@ export default function MyProjects(props) {
               "Voleious is an online chat and interaction social media app that encourages discussions of any topic. Our goal is to get people discussing, so start discussing!"
             }
             skills={["React Native", "Postgress", "Firebase", "Digital Ocean"]}
-            imageSrc={"/assets/projects/voleious.png"}
+            imageSrc={"/assets/projects/voleious.webp"}
             contain
           />
           <Project
@@ -272,7 +272,7 @@ export default function MyProjects(props) {
               "Postgress",
               "Supabase",
             ]}
-            imageSrc={"/assets/projects/digiSevn.png"}
+            imageSrc={"/assets/projects/digiSevn.webp"}
           />
         </div>
         <div className="contributions-container">

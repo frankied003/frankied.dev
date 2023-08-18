@@ -5,21 +5,21 @@ const topicsObj = [
   {
     number: "16",
     title: "MiniGames",
-    src: "/assets/bioSection/minigames.png",
+    src: "/assets/bioSection/minigames.webp",
     description:
       "At 16, I first started out making simple games in Java, like pong, or snake. The fun stuff.",
   },
   {
     number: "17",
     title: "Sneakers",
-    src: "/assets/bioSection/sneakers.png",
+    src: "/assets/bioSection/sneakers.webp",
     description:
       "At 17, I get into reselling sneakers and learned most of my skills through creating sneaker bots.",
   },
   {
     number: "21",
     title: "NFTs",
-    src: "/assets/bioSection/nfts.png",
+    src: "/assets/bioSection/nfts.webp",
     description:
       "At 21, I decided to take my skills into a new industry - the blockchain.",
   },
