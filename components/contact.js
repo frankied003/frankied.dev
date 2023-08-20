@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from "react";
 /**
  * Components import.
  */
-import FormField from "./contactMe/formField";
+import FormField from "./contact/formField";
 
 export default function Contact(props) {
   const [name, setName] = useState("");

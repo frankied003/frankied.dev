@@ -43,6 +43,7 @@ export default function LearnMoreButton() {
       tl.to(buttonRef.current, 0.6, {
         rotationY: xPos / 1.5,
         rotationX: yPos / 1.5,
+        scale: 1.1,
         ease: "Power1.easeOut",
         transformPerspective: 900,
         transformOrigin: "center",
@@ -55,6 +56,7 @@ export default function LearnMoreButton() {
       tl.to(buttonRef.current, 0.6, {
         rotationY: 0,
         rotationX: 0,
+        scale: 1,
         ease: "Power1.easeOut",
         transformPerspective: 900,
         transformOrigin: "center",
