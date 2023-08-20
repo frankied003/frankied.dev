@@ -1,23 +1,14 @@
 .cursor {
-  width: 20px;
-  height: 20px;
-  background-color: var(--black);
+  width: 30px;
+  height: 30px;
+  background-color: rgb(255, 255, 255, 0.9);
   border-radius: 50%;
   position: fixed;
   pointer-events: none;
   z-index: 10000;
-
-  //   &::after {
-  //     content: "";
-  //     width: 20px;
-  //     height: 20px;
-  //     position: absolute;
-  //     border: 2px solid blue;
-  //     border-radius: 50%;
-  //     opacity: 0.5;
-  //     top: -8px;
-  //     left: -8px;
-  //   }
+  mix-blend-mode: difference;
+  border: 2px solid rgba(0, 0, 0, 0.5); /* Add a semi-transparent black border */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Add a subtle shadow for better visibility */
 }
 
 @keyframes cursorAnim {
@@ -25,7 +16,7 @@
     transform: scale(1);
   }
   50% {
-    transform: scale(5);
+    transform: scale(2);
   }
   100% {
     transform: scale(1);

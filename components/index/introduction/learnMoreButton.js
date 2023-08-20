@@ -41,8 +41,8 @@ export default function LearnMoreButton() {
       const yPos = ((event.clientY - rect.top) / rect.height - 0.5) * 50; // -25 to 25
 
       tl.to(buttonRef.current, 0.6, {
-        rotationY: xPos / 2,
-        rotationX: yPos / 2,
+        rotationY: xPos / 1.5,
+        rotationX: yPos / 1.5,
         ease: "Power1.easeOut",
         transformPerspective: 900,
         transformOrigin: "center",

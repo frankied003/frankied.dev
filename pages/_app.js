@@ -38,7 +38,7 @@ function MyApp({ Component, pageProps }) {
         src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"
         strategy="beforeInteractive"
       ></Script>
-      {/* <Cursor /> */}
+      <Cursor />
       <Component {...pageProps} />
     </>
   );

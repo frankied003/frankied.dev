@@ -21,7 +21,6 @@
     color: var(--white);
     font-size: 1.8vw;
     font-weight: 600;
-    cursor: pointer;
   }
 
   .social-media-container {
@@ -41,7 +40,6 @@
       height: auto;
       color: var(--white);
       transition: 0.2s;
-      cursor: pointer;
 
       &:hover {
         opacity: 0.75;

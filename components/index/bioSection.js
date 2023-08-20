@@ -193,15 +193,11 @@ export default function BioSection() {
        */
       leavingPageTl
         .to(bioSectionContainerRef.current.querySelector(".image-container"), {
-          autoAlpha: 1,
-          x: "-10%",
-          y: "-10%",
-          rotate: -30,
+          rotate: -20,
         })
         .to(
           bioSectionContainerRef.current.querySelector(".project-description"),
           {
-            autoAlpha: 1,
             x: "10%",
           },
           "<"

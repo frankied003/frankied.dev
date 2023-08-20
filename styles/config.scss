@@ -84,12 +84,11 @@ body {
   text-rendering: optimizeSpeed;
   line-height: 1.5;
   background-color: var(--snow);
-  // cursor: none;
+  cursor: none;
 }
 
 a {
   text-decoration: none;
-  cursor: var(--hover);
 }
 
 ul {
@@ -103,7 +102,6 @@ li {
 button {
   border: none;
   outline: none;
-  cursor: var(--hover);
 }
 
 // changes to specific inputs
@@ -111,5 +109,4 @@ input[type="file"] {
   display: none;
   border: none;
   outline: none;
-  cursor: var(--hover);
 }
