@@ -3,7 +3,7 @@ import React from "react";
 /**
  * Icons imports.
  */
-import { BsFillSendFill } from "react-icons/bs";
+import { BsFillSendFill, BsFillSendCheckFill } from "react-icons/bs";
 
 export default function FormField(props) {
   return (
@@ -11,13 +11,33 @@ export default function FormField(props) {
       <p className="form-title">{props.title}</p>
       {props.multiline ? (
         <div className="flex-row">
-          <textarea className="textarea" placeholder={props.placeholder} />
-          <div className="submit-button">
-            <BsFillSendFill />
+          <textarea
+            className="textarea"
+            placeholder={props.placeholder}
+            onChange={(event) => props.setValue(event.target.value)}
+            disabled={props.sending || props.success}
+          />
+          <div
+            className={`submit-button ${props.success ? "success" : null}`}
+            disabled={props.sending || props.success}
+            onClick={() => props.send()}
+          >
+            {props.sending ? (
+              "..."
+            ) : props.success ? (
+              <BsFillSendCheckFill />
+            ) : (
+              <BsFillSendFill />
+            )}
           </div>
         </div>
       ) : (
-        <input className="input" placeholder={props.placeholder} />
+        <input
+          className="input"
+          onChange={(event) => props.setValue(event.target.value)}
+          placeholder={props.placeholder}
+          disabled={props.sending || props.success}
+        />
       )}
     </div>
   );

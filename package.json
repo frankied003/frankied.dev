@@ -10,6 +10,7 @@
     "@react-three/fiber": "^8.13.5",
     "@types/three": "^0.154.0",
     "gsap": "^3.12.2",
+    "mailgun.js": "^9.2.1",
     "moment-timezone": "^0.5.43",
     "next": "latest",
     "prop-types": "^15.8.1",

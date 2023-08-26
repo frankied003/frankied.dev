@@ -11,6 +11,32 @@ export default function Contact(props) {
   const [number, setNumber] = useState("");
   const [description, setDescription] = useState("");
 
+  const [sending, setSending] = useState(false);
+  const [success, setSuccess] = useState(false);
+
+  /**
+   * Function to send email to nextJS route.
+   */
+  const sendEmail = async () => {
+    setSending(true);
+    const sendReq = await fetch("/api/writes/sendEmail", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name,
+        email,
+        number,
+        description,
+      }),
+    });
+    if (sendReq.status == 200) {
+      setSuccess(true);
+    }
+    setSending(false);
+  };
+
   const contactContainerRef = useRef(null);
 
   /**
@@ -54,25 +80,39 @@ export default function Contact(props) {
           <p className="subtitle">Want to work together?</p>
           <p className="subtitle">Don't hesitate to contact me below.</p>
         </div>
-        <div
-          className={`form-container ${
-            props.editable ? "pointer-events" : null
-          }`}
-        >
+        <div className="form-container">
           <div className="left-container">
-            <FormField title="Full Name or Business" placeholder="Name" />
+            <FormField
+              title="Full Name or Business"
+              placeholder="Name"
+              sending={sending}
+              success={success}
+              setValue={setName}
+            />
             <FormField
               title="Email Address"
               placeholder="youareawesome@gmail.com"
+              sending={sending}
+              success={success}
+              setValue={setEmail}
             />
-            <FormField title="Phone Number" placeholder="123-123-1234" />
+            <FormField
+              title="Phone Number"
+              placeholder="123-123-1234"
+              sending={sending}
+              success={success}
+              setValue={setNumber}
+            />
           </div>
           <div className="right-container">
             <FormField
               title="Description"
               placeholder="Description"
               multiline
-              submit={() => console.log("submit")}
+              sending={sending}
+              success={success}
+              setValue={setDescription}
+              send={() => sendEmail()}
             />
           </div>
         </div>
