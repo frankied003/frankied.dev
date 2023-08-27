@@ -14,6 +14,12 @@
     height: 45px;
     font-size: 18px;
     padding: 10px 15px;
+    cursor: none;
+
+    &.disabled {
+      pointer-events: none;
+      opacity: 0.9;
+    }
   }
 
   .flex-row {
@@ -29,12 +35,20 @@
       outline: none;
       resize: none;
       flex: 1;
+      cursor: none;
+
+      &.disabled {
+        pointer-events: none;
+        opacity: 0.9;
+      }
     }
 
     .submit-button {
       background-color: var(--black);
       color: var(--white);
-      font-size: 18px;
+      opacity: 1;
+      font-size: 20px;
+      width: 45px;
       writing-mode: vertical-rl;
       text-orientation: upright;
       text-transform: uppercase;
@@ -45,12 +59,51 @@
       justify-content: center;
       transition: 0.2s;
 
+      .sending {
+        display: flex;
+        flex-direction: row; // opposite because of parent orientation
+
+        p {
+          animation: blink 1s linear infinite;
+        }
+
+        p:nth-child(2) {
+          animation-delay: 0.2s;
+        }
+
+        p:nth-child(3) {
+          animation-delay: 0.4s;
+        }
+
+        @keyframes blink {
+          0% {
+            opacity: 0;
+          }
+          50% {
+            opacity: 1;
+          }
+          100% {
+            opacity: 0;
+          }
+        }
+      }
+
       &:hover {
         opacity: 0.75;
       }
 
+      &.disabled {
+        pointer-events: none;
+        opacity: 0.5;
+      }
+
       &.success {
         background-color: #218931;
+        pointer-events: none;
+
+        &:hover {
+          opacity: 1;
+        }
       }
     }
   }

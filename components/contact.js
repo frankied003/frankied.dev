@@ -10,9 +10,15 @@ export default function Contact(props) {
   const [email, setEmail] = useState("");
   const [number, setNumber] = useState("");
   const [description, setDescription] = useState("");
+  const [submittable, setSubmittable] = useState(false);
 
+  /**
+   * Sending states.
+   */
   const [sending, setSending] = useState(false);
   const [success, setSuccess] = useState(false);
+
+  const contactContainerRef = useRef(null);
 
   /**
    * Function to send email to nextJS route.
@@ -37,7 +43,21 @@ export default function Contact(props) {
     setSending(false);
   };
 
-  const contactContainerRef = useRef(null);
+  /**
+   * Form checking.
+   */
+  useEffect(() => {
+    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    const isEmailValid = emailRegex.test(email);
+    const areOtherFieldsFilled =
+      name.trim() !== "" && number.trim() !== "" && description.trim() !== "";
+
+    if (isEmailValid && areOtherFieldsFilled) {
+      setSubmittable(true);
+    } else {
+      setSubmittable(false);
+    }
+  }, [name, email, number, description]);
 
   /**
    * Loading animations.
@@ -85,22 +105,22 @@ export default function Contact(props) {
             <FormField
               title="Full Name or Business"
               placeholder="Name"
-              sending={sending}
-              success={success}
+              type="text"
+              disabled={sending || success}
               setValue={setName}
             />
             <FormField
               title="Email Address"
-              placeholder="youareawesome@gmail.com"
-              sending={sending}
-              success={success}
+              placeholder="youremail@domain.com"
+              type="email"
+              disabled={sending || success}
               setValue={setEmail}
             />
             <FormField
               title="Phone Number"
               placeholder="123-123-1234"
-              sending={sending}
-              success={success}
+              type="text"
+              disabled={sending || success}
               setValue={setNumber}
             />
           </div>
@@ -108,7 +128,10 @@ export default function Contact(props) {
             <FormField
               title="Description"
               placeholder="Description"
+              type="text"
               multiline
+              disabled={sending || success}
+              submitDisabled={!submittable || sending}
               sending={sending}
               success={success}
               setValue={setDescription}
