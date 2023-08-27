@@ -3,16 +3,16 @@ import Mailgun from "mailgun.js";
 
 export default function handler(req, res) {
   const mailgun = new Mailgun(FormData);
-  const domain = "sandbox633873fa1e584b7b9278006fb6f58c1e.mailgun.org";
+  const domain = "mail.frankied.dev";
   const mg = mailgun.client({
     key: process.env.MAILGUN_API_KEY,
     username: domain,
   });
   const data = {
-    from: "Mailgun Sandbox <postmaster@sandbox633873fa1e584b7b9278006fb6f58c1e.mailgun.org>",
+    from: "Frankied.dev <postmaster@mail.frankied.dev>",
     to: ["frankied3030@gmail.com", req.body.email],
-    subject: "Inquiry Received - Frankied.dev",
-    template: "inquiry received",
+    subject: "Inquiry Received",
+    template: "inquiry email",
     "h:X-Mailgun-Variables": JSON.stringify({
       fullName: req.body.name,
       email: req.body.email,
