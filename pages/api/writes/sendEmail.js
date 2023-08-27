@@ -23,5 +23,5 @@ export default function handler(req, res) {
   return mg.messages
     .create(domain, data)
     .then((msg) => res.status(200).json(msg)) // logs response data
-    .catch((err) => console.error(err)); // logs any error
+    .catch((err) => res.status(400).json(err)); // logs any error
 }

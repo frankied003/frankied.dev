@@ -17,6 +17,7 @@ export default function Contact(props) {
    */
   const [sending, setSending] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [error, setError] = useState(false);
 
   const contactContainerRef = useRef(null);
 
@@ -25,6 +26,7 @@ export default function Contact(props) {
    */
   const sendEmail = async () => {
     setSending(true);
+    setError(false);
     const sendReq = await fetch("/api/writes/sendEmail", {
       method: "POST",
       headers: {
@@ -39,6 +41,8 @@ export default function Contact(props) {
     });
     if (sendReq.status == 200) {
       setSuccess(true);
+    } else {
+      setError(true);
     }
     setSending(false);
   };
@@ -139,6 +143,12 @@ export default function Contact(props) {
             />
           </div>
         </div>
+        {error ? (
+          <p className="error">
+            Error submitting inquiry, please contact me directly at
+            frankied3030@gmail.com
+          </p>
+        ) : null}
       </div>
     </div>
   );
