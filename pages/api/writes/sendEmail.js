@@ -9,9 +9,9 @@ export default function handler(req, res) {
     username: domain,
   });
   const data = {
-    from: "Frankied.dev <postmaster@mail.frankied.dev>",
+    from: "Frankied.dev <inquiry@mail.frankied.dev>",
     to: ["frankied3030@gmail.com", req.body.email],
-    subject: "Inquiry Received",
+    subject: `Inquiry Received - ${req.body.name}`,
     template: "inquiry email",
     "h:X-Mailgun-Variables": JSON.stringify({
       fullName: req.body.name,
