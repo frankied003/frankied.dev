@@ -41,6 +41,10 @@
       color: var(--white);
       transition: 0.2s;
 
+      @media screen and (min-width: 2000px) {
+        width: 4vw;
+      }
+
       &:hover {
         opacity: 0.75;
         scale: 1.2;
@@ -56,5 +60,14 @@
     font-weight: 600;
     font-size: 1vw;
     opacity: 0;
+
+    @media screen and (max-width: 912px) {
+      font-size: 18px;
+      bottom: 10%;
+    }
+
+    @media screen and (min-width: 2000px) {
+      font-size: 1vw;
+    }
   }
 }

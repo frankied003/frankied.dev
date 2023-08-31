@@ -15,6 +15,15 @@
     56% 50%,
     80% 85%
   );
+
+  @media screen and (max-width: 912px) {
+    display: none;
+  }
+
+  @media screen and (min-width: 2000px) {
+    width: 1.75vw;
+    height: 1.75vw;
+  }
 }
 
 @keyframes cursorAnim {

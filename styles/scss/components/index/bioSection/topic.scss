@@ -18,6 +18,14 @@
     font-weight: 200;
     color: var(--black);
     margin-right: 2%;
+
+    @media screen and (max-width: 912px) {
+      font-size: 3.5vw;
+    }
+
+    @media screen and (min-width: 2000px) {
+      font-size: 1vw;
+    }
   }
 
   .title {
@@ -25,5 +33,13 @@
     font-weight: 700;
     line-height: 1.2;
     color: var(--black);
+
+    @media screen and (max-width: 912px) {
+      font-size: 10vw;
+    }
+
+    @media screen and (min-width: 2000px) {
+      font-size: 4.5vw;
+    }
   }
 }

@@ -22,7 +22,7 @@ export default function SocialMediaLink(props) {
       href={link}
       target="#"
     >
-      <div className="left-container">
+      <div className="container">
         <div className={`icon-container ${hovered ? "hovered" : null}`}>
           {icon}
         </div>

@@ -9,15 +9,27 @@
   padding: 10px 15px;
   margin-top: 3%;
 
+  @media screen and (min-width: 2000px) {
+    padding: 0.75vw 1.2vw;
+  }
+
   .learn-more-text {
     font-size: 24px;
     font-weight: 500;
     color: var(--black);
+
+    @media screen and (min-width: 2000px) {
+      font-size: 1.3vw;
+    }
   }
 
   .icon {
     width: 30px;
     height: auto;
     color: var(--black);
+
+    @media screen and (min-width: 2000px) {
+      width: 2vw;
+    }
   }
 }

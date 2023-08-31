@@ -4,4 +4,11 @@
   bottom: 3%;
   left: 50%;
   opacity: 0;
+  width: 75px;
+  height: 100px;
+
+  @media screen and (min-width: 2000px) {
+    width: 5vw;
+    height: 6vw;
+  }
 }

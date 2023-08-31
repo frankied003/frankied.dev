@@ -1,12 +1,16 @@
 .my-skills-container {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   position: relative;
   padding-top: 5%;
   padding-left: 3%;
   padding-right: 3%;
   display: flex;
   flex-direction: column;
+
+  @media screen and (max-width: 912px) {
+    padding-bottom: 12%;
+  }
 
   .title-container {
     width: fit-content;
@@ -20,6 +24,14 @@
       overflow: hidden;
       border-right: 5px solid rgba(0, 0, 0, 0.75);
       white-space: nowrap;
+
+      @media screen and (max-width: 912px) {
+        font-size: 56px;
+      }
+
+      @media screen and (min-width: 2000px) {
+        font-size: 4vw;
+      }
     }
   }
 
@@ -31,14 +43,26 @@
     justify-content: center;
     align-self: center;
 
+    @media screen and (max-width: 912px) {
+      width: 100%;
+    }
+
     .skill-section {
       width: 100%;
       margin-bottom: 2%;
+
+      @media screen and (max-width: 912px) {
+        margin-bottom: 10%;
+      }
 
       .title {
         font-size: 28px;
         color: var(--black);
         margin-bottom: 25px;
+
+        @media screen and (min-width: 2000px) {
+          font-size: 1.75vw;
+        }
       }
 
       .skills-container {
@@ -49,6 +73,10 @@
         width: 100%;
         gap: 20px;
         flex-wrap: wrap;
+
+        @media screen and (min-width: 2000px) {
+          gap: 1vw;
+        }
       }
     }
   }

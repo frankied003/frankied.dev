@@ -7,6 +7,10 @@
     font-size: 20px;
     margin-bottom: 5px;
     color: var(--snow);
+
+    @media screen and (min-width: 2000px) {
+      font-size: 1.2vw;
+    }
   }
 
   .input {
@@ -15,6 +19,12 @@
     font-size: 18px;
     padding: 10px 15px;
     cursor: none;
+
+    @media screen and (min-width: 2000px) {
+      height: 2.75vw;
+      font-size: 1.2vw;
+      padding: 10px 1vw;
+    }
 
     &.disabled {
       pointer-events: none;
@@ -37,6 +47,11 @@
       flex: 1;
       cursor: none;
 
+      @media screen and (min-width: 2000px) {
+        font-size: 1.2vw;
+        padding: 0.5vw 1vw;
+      }
+
       &.disabled {
         pointer-events: none;
         opacity: 0.9;
@@ -58,6 +73,12 @@
       align-items: center;
       justify-content: center;
       transition: 0.2s;
+
+      @media screen and (min-width: 2000px) {
+        font-size: 1.2vw;
+        padding: 0.5vw 1vw;
+        width: 2.5vw;
+      }
 
       .sending {
         display: flex;

@@ -11,10 +11,20 @@
   margin-bottom: -5%; // for gsap animation
   border-top: 5px solid var(--black);
 
+  @media screen and (max-width: 912px) {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
   .image-container {
     width: 50%;
     height: 100%;
     position: relative;
+
+    @media screen and (max-width: 912px) {
+      height: 45%;
+      width: 100%;
+    }
 
     .image {
       object-fit: contain;
@@ -30,12 +40,27 @@
     height: 100%;
     gap: 5%;
 
+    @media screen and (max-width: 912px) {
+      height: 50%;
+      width: 100%;
+      padding: 5%;
+    }
+
     .description {
       font-size: 20px;
       font-weight: 200;
       color: var(--black);
       width: 70%;
       text-align: right;
+
+      @media screen and (max-width: 912px) {
+        width: 100%;
+        text-align: left;
+      }
+
+      @media screen and (min-width: 2000px) {
+        font-size: 1.4vw;
+      }
 
       &.bottom {
         color: var(--grey);

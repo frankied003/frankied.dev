@@ -44,7 +44,16 @@ export default function ScrollText(props) {
   }, []);
 
   return (
-    <div className="scroll-text-container" ref={scrollTextContainerRef}>
+    <div
+      className={
+        props.top
+          ? "scroll-text-container top"
+          : props.bottom
+          ? "scroll-text-container bottom"
+          : "scroll-text-container"
+      }
+      ref={scrollTextContainerRef}
+    >
       <p className={props.opposite ? "right-scroll-text" : "left-scroll-text"}>
         {props.text1}
       </p>

@@ -8,7 +8,7 @@ export default function MyProjects(props) {
   const projectsContainerRef = useRef(null);
 
   /**
-   * GSAP animations.
+   * GSAP animations for desktop project section.
    */
   useEffect(() => {
     // Scroll animation

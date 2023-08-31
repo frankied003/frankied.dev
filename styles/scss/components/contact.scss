@@ -32,6 +32,10 @@
         font-size: 64px;
         font-weight: 400;
         color: var(--snow);
+
+        @media screen and (min-width: 2000px) {
+          font-size: 4vw;
+        }
       }
 
       .subtitle {
@@ -39,6 +43,10 @@
         font-weight: 300;
         line-height: 1.2;
         color: var(--white);
+
+        @media screen and (min-width: 2000px) {
+          font-size: 1.5vw;
+        }
       }
     }
 

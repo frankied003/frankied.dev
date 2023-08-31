@@ -32,16 +32,22 @@ export default function Home(props) {
       <Introduction />
       <BioSection />
       <ScrollText
-        text1={"My Projects - My Work - My Projects - My Work - My Projects -"}
-        text2={"My Work • My Projects • My Work • My Projects • My Work •"}
+        top
+        text1={
+          "My Projects - My Work - My Projects - My Work - My Projects - My Work - My Projects - My Work - My Projects -"
+        }
+        text2={
+          "My Work • My Projects • My Work • My Projects • My Work • My Projects • My Work • My Projects • My Work •"
+        }
       />
       <MyProjects parentRef={mainContainerRef} />
       <ScrollText
+        bottom
         text1={
-          "My Skills - My Passions - My Skills - My Passions - My Skills -"
+          "My Skills - My Passions - My Skills - My Passions - My Skills - My Passions - My Skills - My Passions - My Skills -"
         }
         text2={
-          "My Passions • My Skills • My Passions • My Skills • My Passions -"
+          "My Passions • My Skills • My Passions • My Skills • My Passions • My Skills • My Passions • My Skills • My Passions •"
         }
         opposite
       />

@@ -8,6 +8,10 @@
   padding: 10px 15px;
   transition: 0.2s;
 
+  @media screen and (min-width: 2000px) {
+    padding: 0.75vw 1.2vw;
+  }
+
   &:hover {
     scale: 1.1;
   }
@@ -16,5 +20,9 @@
     font-size: 16px;
     font-weight: 500;
     color: var(--black);
+
+    @media screen and (min-width: 2000px) {
+      font-size: 1vw;
+    }
   }
 }

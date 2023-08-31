@@ -7,6 +7,10 @@
   padding-bottom: 0px;
   background-color: var(--white);
 
+  @media screen and (max-width: 912px) {
+    height: 25vh;
+  }
+
   .top-footer-container {
     display: flex;
     flex-direction: row;
@@ -14,11 +18,19 @@
     width: 100%;
     height: 75%;
 
+    @media screen and (max-width: 912px) {
+      align-items: flex-end;
+    }
+
     .title {
       color: var(--black);
       font-weight: 700;
       font-size: 8vw;
       text-transform: uppercase;
+
+      @media screen and (max-width: 912px) {
+        font-size: 12vw;
+      }
     }
   }
 
@@ -31,12 +43,22 @@
     .copyright {
       color: var(--black);
       font-weight: 500;
+      font-size: 1.1vw;
+
+      @media screen and (max-width: 912px) {
+        font-size: 4.5vw;
+      }
     }
 
     .time-container {
+      @media screen and (max-width: 912px) {
+        display: none;
+      }
+
       .time {
         color: var(--black);
         text-align: right;
+        font-size: 1.1vw;
       }
     }
   }

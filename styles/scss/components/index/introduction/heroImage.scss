@@ -7,6 +7,12 @@
   opacity: 0;
   z-index: 1;
 
+  @media screen and (max-width: 912px) {
+    width: 140%;
+    height: 70%;
+    right: -40%;
+  }
+
   .image-container {
     position: relative;
     width: 100%;
