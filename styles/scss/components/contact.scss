@@ -13,6 +13,10 @@
   opacity: 0;
   z-index: 3;
 
+  @media screen and (max-width: 912px) {
+    padding-top: 10vh;
+  }
+
   .content {
     width: 80%;
     height: 70%;
@@ -22,16 +26,33 @@
     align-items: center;
     justify-content: center;
 
+    @media screen and (max-width: 912px) {
+      width: 100%;
+      height: 100%;
+      padding: 5vw;
+      gap: 5vw;
+    }
+
     .top-flex-row {
       width: 100%;
       display: flex;
       flex-direction: column;
       align-items: flex-end;
 
+      @media screen and (max-width: 912px) {
+        align-items: flex-start;
+      }
+
       .contact-title {
         font-size: 64px;
         font-weight: 400;
         color: var(--snow);
+
+        @media screen and (max-width: 912px) {
+          font-size: 15vw;
+          line-height: 1;
+          margin-bottom: 10px;
+        }
 
         @media screen and (min-width: 2000px) {
           font-size: 4vw;
@@ -59,8 +80,9 @@
       height: 70%;
       gap: 5%;
 
-      &.pointer-events {
-        pointer-events: auto;
+      @media screen and (max-width: 912px) {
+        height: 100%;
+        flex-direction: column;
       }
 
       .left-container {
@@ -71,12 +93,20 @@
         gap: 10px;
         width: 35%;
         height: 75%;
+
+        @media screen and (max-width: 912px) {
+          width: 100%;
+        }
       }
 
       .right-container {
         width: 50%;
         display: flex;
         height: 75%;
+
+        @media screen and (max-width: 912px) {
+          width: 100%;
+        }
       }
     }
 
