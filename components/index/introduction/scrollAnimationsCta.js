@@ -48,7 +48,7 @@ export default function ScrollAnimationCta() {
 
   return (
     <div className="lottie-animation" ref={scrollContainerRef}>
-      <Lottie options={defaultOptions} />
+      <Lottie options={defaultOptions} height={90} width={100} />
     </div>
   );
 }

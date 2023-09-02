@@ -82,22 +82,24 @@ export default function Menu(props) {
         />
         <SocialMediaLink
           icon={<AiOutlineTwitter className="icon" />}
-          link={"https://github.com/frankied003"}
+          link={"https://twitter.com/frankied_eth"}
           text={"Twitter"}
         />
         <SocialMediaLink
           icon={<AiFillMediumSquare className="icon" />}
-          link={"https://github.com/frankied003"}
+          link={"https://medium.com/@frankied3030"}
           text={"Medium"}
         />
         <SocialMediaLink
           icon={<BsDiscord className="icon" />}
-          link={"https://github.com/frankied003"}
+          link={"https://discordapp.com/users/463030182064685056"}
           text={"Discord"}
         />
         <SocialMediaLink
           icon={<FaEthereum className="icon" />}
-          link={"https://github.com/frankied003"}
+          link={
+            "https://etherscan.io/address/0xbD169b118063c577e8Bba6F3600e547fE950A456"
+          }
           text={"Wallet"}
         />
       </div>

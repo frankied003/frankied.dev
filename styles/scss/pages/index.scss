@@ -1,9 +1,33 @@
-.home {
-  overflow: hidden;
+.canvas-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  .main-flex-row {
+  .title-container {
     display: flex;
-    flex-direction: row;
-    width: 200%;
+    align-items: center;
+    justify-content: center;
+    width: min-content;
+    position: relative;
+
+    .title {
+      font-size: 52px;
+      font-weight: 700;
+      color: var(--black);
+      overflow: hidden;
+      border-right: 5px solid var(--black);
+      white-space: nowrap;
+      text-align: center;
+      width: 0px;
+      opacity: 0;
+    }
+  }
+
+  .absolute-container {
+    position: absolute;
+    right: 7%;
+    bottom: 0px;
   }
 }

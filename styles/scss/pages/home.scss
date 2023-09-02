@@ -1,0 +1,9 @@
+.home {
+  overflow: hidden;
+
+  .main-flex-row {
+    display: flex;
+    flex-direction: row;
+    width: 200%;
+  }
+}

@@ -23,7 +23,7 @@ export default function LearnMoreButton() {
     gsap.to(window, {
       duration: 5,
       scrollTo: {
-        y: ".my-projects-container",
+        y: ".bio-section-container",
         offsetY: offset,
       },
       ease: "power4.out",

@@ -1,61 +1,115 @@
-import react, { useEffect, useRef, useState } from "react";
+import { Suspense, useRef, useState, useEffect } from "react";
+import { Canvas } from "@react-three/fiber";
+import { Stage, ScrollControls } from "@react-three/drei";
 
-/**
- * Components imports.
- */
-import Introduction from "../components/index/introduction";
-import MyProjects from "../components/index/myProjects";
-import BioSection from "../components/index/bioSection";
-import ScrollText from "../components/index/scrollText";
-import MySkills from "../components/index/mySkills";
-import Footer from "../components/index/footer";
-import Header from "../partials/header";
-import Background from "../partials/background";
-import Menu from "../components/header/menu";
-import Contact from "../components/contact";
+import Model from "../components/threeJs/model";
+import Home from "./home";
+import ScrollAnimationCtaCanvas from "../components/threeJs/scrollAnimationsCtaCanvas";
 
-export default function Home(props) {
-  const mainContainerRef = useRef(null);
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [contactOpen, setContactOpen] = useState(false);
+export default function Test() {
+  const [startAnimations, setStartAnimations] = useState(false);
+  const [revealWebsite, setRevealWebsite] = useState(false);
+
+  /**
+   * For contact page.
+   */
+  const canvasContainerRef = useRef(null);
+
+  /**
+   * Animation for intro.
+   */
+  useEffect(() => {
+    /**
+     * If the window width is less than 768 pixels, assume it's mobile
+     */
+    if (window.innerWidth < 768) {
+      setRevealWebsite(true);
+    }
+
+    if (canvasContainerRef.current) {
+      const titleTl = gsap.timeline();
+      titleTl
+        .fromTo(
+          canvasContainerRef.current?.querySelector(".title"),
+          {
+            autoAlpha: 0,
+          },
+          {
+            autoAlpha: 1,
+            duration: 0.2,
+          }
+        )
+        .fromTo(
+          canvasContainerRef.current?.querySelector(".title"),
+          {
+            width: 0,
+          },
+          {
+            width: "100%",
+            duration: 1.5,
+            delay: 1,
+          }
+        )
+        .fromTo(
+          canvasContainerRef.current?.querySelector(".title"),
+          {
+            "border-right-color": "rgba(0,0,0,0.75)",
+            paddingRight: 0,
+          },
+          {
+            "border-right-color": "rgba(0,0,0,0)",
+            duration: 0.5,
+            repeat: 6,
+            ease: "none",
+            yoyo: true,
+          },
+          "<"
+        )
+        .to(
+          canvasContainerRef.current?.querySelector(".title"),
+          {
+            width: 0,
+            duration: 1,
+            delay: 1.8,
+          },
+          "<"
+        );
+      const timeout = setTimeout(() => {
+        setStartAnimations(true);
+      }, 3500);
+      return () => {
+        clearTimeout(timeout);
+      };
+    }
+  }, []);
 
   return (
-    <main className="home" ref={mainContainerRef}>
-      <Background />
-      <Header
-        setMenuOpen={() => setMenuOpen(true)}
-        setContactOpen={() => setContactOpen(true)}
-        setContactClose={() => setContactOpen(false)}
-        contactOpened={contactOpen}
-      />
-      <Menu setMenuClosed={() => setMenuOpen(false)} menuOpen={menuOpen} />
-      <Introduction />
-      <BioSection />
-      <ScrollText
-        top
-        text1={
-          "My Projects - My Work - My Projects - My Work - My Projects - My Work - My Projects - My Work - My Projects -"
-        }
-        text2={
-          "My Work • My Projects • My Work • My Projects • My Work • My Projects • My Work • My Projects • My Work •"
-        }
-      />
-      <MyProjects parentRef={mainContainerRef} />
-      <ScrollText
-        bottom
-        text1={
-          "My Skills - My Passions - My Skills - My Passions - My Skills - My Passions - My Skills - My Passions - My Skills -"
-        }
-        text2={
-          "My Passions • My Skills • My Passions • My Skills • My Passions • My Skills • My Passions • My Skills • My Passions •"
-        }
-        opposite
-      />
-      <MySkills />
-      <Footer />
-      {contactOpen ? (
-        <Contact setContactClosed={() => setContactOpen(false)} />
-      ) : null}
-    </main>
+    <>
+      {revealWebsite ? (
+        <Home />
+      ) : (
+        <div className="canvas-container" ref={canvasContainerRef}>
+          <div className="title-container">
+            <p className="title">Frankied.dev</p>
+          </div>
+          <div className="absolute-container">
+            <ScrollAnimationCtaCanvas startAnimations={startAnimations} />
+          </div>
+          <Canvas style={{ position: "absolute" }} shadows camera={{ fov: 50 }}>
+            <Stage
+              preset="rembrandt"
+              intensity={1}
+              environment="sunset"
+            ></Stage>
+            <ScrollControls pages={2} damping={0.25}>
+              <Model
+                revealWebsite={() => setRevealWebsite(true)}
+                startAnimations={startAnimations}
+              />
+            </ScrollControls>
+          </Canvas>
+        </div>
+      )}
+    </>
   );
 }
