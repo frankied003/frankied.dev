@@ -92,7 +92,7 @@ export default function GithubBadge() {
         <g>
           <text fill="#000">
             <textPath xlinkHref="#circlePath" className="circleText">
-              This website's code is now on GitHub! ━ ━ ━ ━ ━ ━
+              This website's code will soon be on GitHub! ━ ━ ━ ━ ━ ━
             </textPath>
           </text>
         </g>

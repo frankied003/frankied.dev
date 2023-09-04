@@ -235,6 +235,7 @@ export default function MyProjects(props) {
               "Vercel",
               "Digital Ocean",
             ]}
+            link={"https://isekaimeta.com"}
             imageSrc={"/assets/projects/isekaimeta.webp"}
           />
           <Project
@@ -245,6 +246,7 @@ export default function MyProjects(props) {
               "The very first modular surfboard that fits in a carry-on suitcase to improve board performance and decrease travel costs and struggle."
             }
             skills={["React.JS", "JavaScript", "Vercel"]}
+            link={"https://carryonboard.com"}
             imageSrc={"/assets/projects/onBoard.webp"}
           />
           <Project
@@ -255,6 +257,7 @@ export default function MyProjects(props) {
               "Voleious is an online chat and interaction social media app that encourages discussions of any topic. Our goal is to get people discussing, so start discussing!"
             }
             skills={["React Native", "Postgress", "Firebase", "Digital Ocean"]}
+            link={"https://voleious.com"}
             imageSrc={"/assets/projects/voleious.webp"}
             contain
           />
@@ -272,6 +275,7 @@ export default function MyProjects(props) {
               "Postgress",
               "Supabase",
             ]}
+            link={"https://digisevn.com"}
             imageSrc={"/assets/projects/digiSevn.webp"}
           />
         </div>

@@ -5,6 +5,7 @@ import Image from "next/image";
  * Icon imports.
  */
 import Skill from "../mySkills/skill";
+import VisitButton from "./visitButton";
 
 export default function Project(props) {
   const cardRef = useRef(null);
@@ -31,6 +32,7 @@ export default function Project(props) {
           className={`image ${props.contain ? "contain" : null}`}
         />
       </div>
+      <VisitButton link={props.link} />
     </div>
   );
 }
