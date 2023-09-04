@@ -2,11 +2,23 @@ import { Suspense, useRef, useState, useEffect } from "react";
 import { Canvas } from "@react-three/fiber";
 import { Stage, ScrollControls } from "@react-three/drei";
 
+/**
+ * Components imports.
+ */
 import Model from "../components/threeJs/model";
-import Home from "./home";
 import ScrollAnimationCtaCanvas from "../components/threeJs/scrollAnimationsCtaCanvas";
 
-export default function Test() {
+/**
+ * Pages imports.
+ */
+import Home from "./home";
+
+/**
+ * Metadata imports.
+ */
+import Metadata from "../components/metadata";
+
+export default function Index() {
   const [startAnimations, setStartAnimations] = useState(false);
   const [revealWebsite, setRevealWebsite] = useState(false);
 
@@ -85,6 +97,7 @@ export default function Test() {
 
   return (
     <>
+      <Metadata />
       {revealWebsite ? (
         <Home />
       ) : (
