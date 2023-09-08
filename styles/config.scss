@@ -85,6 +85,10 @@ body {
   line-height: 1.5;
   background-color: var(--snow);
   cursor: none;
+
+  @media screen and (max-width: 912px) {
+    cursor: auto;
+  }
 }
 
 a {

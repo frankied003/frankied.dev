@@ -107,7 +107,12 @@ export default function BioSection() {
     // Scroll animation
     gsap.registerPlugin(ScrollTrigger);
 
-    let ctx = gsap.context(() => {
+    let mm = gsap.matchMedia();
+
+    mm.add("(min-width: 912px)", () => {
+      /**
+       * Top of section parallax effect.
+       */
       const scrollPageTl = gsap.timeline({
         scrollTrigger: {
           trigger: bioSectionContainerRef.current,
@@ -117,6 +122,16 @@ export default function BioSection() {
           //   markers: true,
         },
       });
+      scrollPageTl.to(bioSectionContainerRef.current, {
+        y: "-10%",
+        ease: "none",
+      });
+    });
+
+    let ctx = gsap.context(() => {
+      /**
+       * Loading animations into the screen.
+       */
       const loadingScrollTl = gsap.timeline({
         scrollTrigger: {
           trigger: bioSectionContainerRef.current,
@@ -125,28 +140,6 @@ export default function BioSection() {
           //   markers: true,
         },
       });
-      const leavingPageTl = gsap.timeline({
-        scrollTrigger: {
-          trigger: bioSectionContainerRef.current,
-          scrub: 1,
-          start: "top top",
-          end: "bottom top",
-          toggleActions: "play none none reverse",
-          // markers: true,
-        },
-      });
-
-      /**
-       * Top of section parallax effect.
-       */
-      scrollPageTl.to(bioSectionContainerRef.current, {
-        y: "-10%",
-        ease: "none",
-      });
-
-      /**
-       * Loading animations into the screen.
-       */
       loadingScrollTl
         .fromTo(
           bioSectionContainerRef.current.querySelector(".top"),
@@ -191,6 +184,16 @@ export default function BioSection() {
       /**
        * Leaving page animations. (Scrolling to next section)
        */
+      const leavingPageTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: bioSectionContainerRef.current,
+          scrub: 1,
+          start: "35% top",
+          end: "bottom top",
+          toggleActions: "play none none reverse",
+          markers: true,
+        },
+      });
       leavingPageTl
         .to(bioSectionContainerRef.current.querySelector(".image-container"), {
           rotate: -20,
@@ -231,6 +234,7 @@ export default function BioSection() {
               number={topic.number}
               title={topic.title}
               index={topicsObj.indexOf(topic)}
+              key={topicsObj.indexOf(topic)}
             />
           ))}
         </div>

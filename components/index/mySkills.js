@@ -127,7 +127,7 @@ export default function MySkills() {
           <p className="title">Languages</p>
           <div className="skills-container">
             {skillsObj.map((skill) => (
-              <Skill title={skill} />
+              <Skill title={skill} key={skillsObj.indexOf(skill)} />
             ))}
           </div>
         </div>
@@ -135,7 +135,7 @@ export default function MySkills() {
           <p className="title">Software</p>
           <div className="skills-container">
             {softwareObj.map((skill) => (
-              <Skill title={skill} />
+              <Skill title={skill} key={softwareObj.indexOf(skill)} />
             ))}
           </div>
         </div>

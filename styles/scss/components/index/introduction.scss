@@ -15,7 +15,7 @@
 
     @media screen and (max-width: 912px) {
       height: 60%;
-      padding-top: 20%;
+      padding-top: 10%;
     }
 
     .content {
@@ -93,8 +93,7 @@
     height: 25%;
 
     @media screen and (max-width: 912px) {
-      height: 40%;
-      z-index: 2;
+      display: none;
     }
 
     .animation-progress-number {

@@ -20,6 +20,10 @@
     padding: 10px 15px;
     cursor: none;
 
+    @media screen and (max-width: 912px) {
+      cursor: auto;
+    }
+
     @media screen and (min-width: 2000px) {
       height: 2.75vw;
       font-size: 1.2vw;
@@ -46,6 +50,10 @@
       resize: none;
       flex: 1;
       cursor: none;
+
+      @media screen and (max-width: 912px) {
+        cursor: auto;
+      }
 
       @media screen and (min-width: 2000px) {
         font-size: 1.2vw;

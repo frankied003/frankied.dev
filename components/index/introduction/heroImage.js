@@ -10,7 +10,11 @@ export default function HeroImage() {
    * Handle mouse movements for image.
    */
   useEffect(() => {
+    const isMobile = window.innerWidth <= 768;
+
     const handleMouseMove = (e) => {
+      if (isMobile) return;
+
       const winWidth = window.innerWidth;
       const winHeight = window.innerHeight;
       const mouseX = e.clientX - winWidth / 2;
@@ -48,11 +52,13 @@ export default function HeroImage() {
       }
     };
 
-    window.addEventListener("mousemove", handleMouseMove);
+    if (!isMobile) {
+      window.addEventListener("mousemove", handleMouseMove);
 
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-    };
+      return () => {
+        window.removeEventListener("mousemove", handleMouseMove);
+      };
+    }
   }, []);
 
   return (
@@ -63,18 +69,21 @@ export default function HeroImage() {
           fill
           alt="Frankied.dev Background"
           className="image image-1"
+          priority
         />
         <Image
           src="/assets/introduction/frankied_char.webp"
           fill
           alt="Frankied.dev Character"
           className="image image-2"
+          priority
         />
         <Image
           src="/assets/introduction/frankied_laptop.webp"
           fill
           alt="Frankied.dev Laptop"
           className="image image-3"
+          priority
         />
       </div>
     </div>
