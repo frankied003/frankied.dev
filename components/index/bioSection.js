@@ -191,7 +191,7 @@ export default function BioSection() {
           start: "35% top",
           end: "bottom top",
           toggleActions: "play none none reverse",
-          markers: true,
+          // markers: true,
         },
       });
       leavingPageTl
