@@ -10,6 +10,8 @@
 
   @media screen and (max-width: 912px) {
     padding-bottom: 12%;
+    padding-left: 5%;
+    padding-right: 5%;
   }
 
   .title-container {
@@ -26,7 +28,7 @@
       white-space: nowrap;
 
       @media screen and (max-width: 912px) {
-        font-size: 56px;
+        font-size: 48px;
       }
 
       @media screen and (min-width: 2000px) {
@@ -59,6 +61,10 @@
         font-size: 28px;
         color: var(--black);
         margin-bottom: 25px;
+
+        @media screen and (max-width: 912px) {
+          font-size: 24px;
+        }
 
         @media screen and (min-width: 2000px) {
           font-size: 1.75vw;

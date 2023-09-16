@@ -9,7 +9,7 @@
   pointer-events: none;
 
   @media screen and (max-width: 912px) {
-    min-width: 150px;
+    min-width: 140px;
   }
 
   @media screen and (min-width: 2000px) {
@@ -20,6 +20,10 @@
   .skill-title {
     font-size: 18px;
     color: var(--black);
+
+    @media screen and (max-width: 912px) {
+      font-size: 16px;
+    }
 
     @media screen and (min-width: 2000px) {
       font-size: 1.2vw;

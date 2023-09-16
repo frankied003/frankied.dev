@@ -126,6 +126,31 @@ export default function BioSection() {
         y: "-10%",
         ease: "none",
       });
+
+      /**
+       * Leaving page animations. (Scrolling to next section)
+       */
+      const leavingPageTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: bioSectionContainerRef.current,
+          scrub: 1,
+          start: "35% top",
+          end: "bottom top",
+          toggleActions: "play none none reverse",
+          // markers: true,
+        },
+      });
+      leavingPageTl
+        .to(bioSectionContainerRef.current.querySelector(".image-container"), {
+          rotate: -20,
+        })
+        .to(
+          bioSectionContainerRef.current.querySelector(".project-description"),
+          {
+            x: "10%",
+          },
+          "<"
+        );
     });
 
     let ctx = gsap.context(() => {
@@ -179,31 +204,6 @@ export default function BioSection() {
             ease: "back.out(1.7)",
           },
           "<0.5"
-        );
-
-      /**
-       * Leaving page animations. (Scrolling to next section)
-       */
-      const leavingPageTl = gsap.timeline({
-        scrollTrigger: {
-          trigger: bioSectionContainerRef.current,
-          scrub: 1,
-          start: "35% top",
-          end: "bottom top",
-          toggleActions: "play none none reverse",
-          // markers: true,
-        },
-      });
-      leavingPageTl
-        .to(bioSectionContainerRef.current.querySelector(".image-container"), {
-          rotate: -20,
-        })
-        .to(
-          bioSectionContainerRef.current.querySelector(".project-description"),
-          {
-            x: "10%",
-          },
-          "<"
         );
     });
     return () => ctx.revert();

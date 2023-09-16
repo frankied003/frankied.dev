@@ -59,6 +59,10 @@
         color: var(--black);
         line-height: 1.2;
 
+        @media screen and (max-width: 912px) {
+          font-size: 28px;
+        }
+
         @media screen and (min-width: 2000px) {
           font-size: 2vw;
         }
@@ -69,6 +73,10 @@
         font-weight: 400;
         color: var(--grey);
         line-height: 1.2;
+
+        @media screen and (max-width: 912px) {
+          font-size: 18px;
+        }
 
         @media screen and (min-width: 2000px) {
           font-size: 1.3vw;
