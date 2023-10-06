@@ -88,6 +88,7 @@ export default function BioSection() {
             x: 0,
             rotate: 0,
             duration: 0.6,
+            delay: 0.3,
             ease: "back.out(1.7)",
           }
         )
@@ -168,8 +169,8 @@ export default function BioSection() {
       loadingScrollTl
         .fromTo(
           bioSectionContainerRef.current.querySelector(".top"),
-          { autoAlpha: 0, y: 25, skewY: 3 },
-          { autoAlpha: 1, y: 0, skewY: 0 }
+          { autoAlpha: 0, y: 25 },
+          { autoAlpha: 1, y: 0 }
         )
         .fromTo(
           bioSectionContainerRef.current.querySelectorAll(".topic .title"),
