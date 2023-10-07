@@ -8,9 +8,10 @@
   margin-bottom: 2%;
 
   @media screen and (max-width: 912px) {
-    padding-top: 25%;
+    padding-top: 10%;
     margin-bottom: 0%;
     padding-bottom: 0%;
+    height: 325vh;
   }
 
   @media screen and (min-width: 2000px) {
@@ -40,6 +41,7 @@
 
       @media screen and (max-width: 912px) {
         width: 100%;
+        gap: 1.5%;
       }
     }
 

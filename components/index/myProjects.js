@@ -14,206 +14,217 @@ export default function MyProjects(props) {
     // Scroll animation
     gsap.registerPlugin(ScrollTrigger);
 
-    let ctx = gsap.context(() => {
-      const topRowScrollTl = gsap.timeline({
-        scrollTrigger: {
-          trigger: projectsContainerRef.current,
-          scrub: 1,
-          start: "top bottom",
-          end: "90% bottom",
-          // markers: true,
-        },
-      });
-
-      const scrollTl = gsap.timeline({
-        scrollTrigger: {
-          trigger: projectsContainerRef.current,
-          scrub: 1,
-          pin: true,
-          start: "top top",
-          end: "+=2500",
-          // markers: true,
-        },
-      });
-
-      topRowScrollTl
-        .fromTo(
-          projectsContainerRef.current.querySelector(
-            ".projects-scroll-container"
-          ),
-          {
-            autoAlpha: 0,
+    let mm = gsap.matchMedia();
+    mm.add("(min-width: 912px)", () => {
+      let ctx = gsap.context(() => {
+        const topRowScrollTl = gsap.timeline({
+          scrollTrigger: {
+            trigger: projectsContainerRef.current,
+            scrub: 1,
+            start: "top bottom",
+            end: "90% bottom",
+            // markers: true,
           },
-          {
-            autoAlpha: 1,
-            duration: 3,
-          },
-          "<"
-        )
-        .fromTo(
-          projectsContainerRef.current.querySelector(
-            ".contributions-container"
-          ),
-          {
-            autoAlpha: 0,
-            y: 200,
-          },
-          {
-            autoAlpha: 1,
-            y: 0,
-            duration: 3,
-          },
-          "<"
-        );
-
-      scrollTl
-        // The project scrolling.
-        // Two.
-        .to(
-          projectsContainerRef.current.querySelector(".project-container.one"),
-          {
-            y: "-10%",
-            delay: 0.35,
-            opacity: 0,
-            scale: 0.9,
-            duration: 1.5,
-          }
-        )
-        .to(
-          projectsContainerRef.current.querySelector(".project-container.two"),
-          {
-            y: "-105%",
-            duration: 1.5,
-          },
-          "<"
-        )
-        .to(
-          projectsContainerRef.current.querySelector(".scroll-container"),
-          {
-            scrollTo: {
-              y: projectsContainerRef.current.querySelector(".desc-two"),
-            },
-            duration: 1.5,
-          },
-          "<"
-        )
-        .to(
-          projectsContainerRef.current.querySelector(".desc-one"),
-          {
-            opacity: 0.1,
-            duration: 1.5,
-          },
-          "<"
-        )
-        .to(
-          projectsContainerRef.current.querySelector(".desc-two"),
-          {
-            opacity: 1,
-            duration: 1.5,
-          },
-          "<"
-        )
-        // Three.
-        .to(
-          projectsContainerRef.current.querySelector(".project-container.two"),
-          {
-            y: "-115%",
-            delay: 0.35,
-            opacity: 0,
-            scale: 0.9,
-            duration: 1.5,
-          }
-        )
-        .to(
-          projectsContainerRef.current.querySelector(
-            ".project-container.three"
-          ),
-          {
-            y: "-210%",
-            duration: 1.5,
-          },
-          "<"
-        )
-        .to(
-          projectsContainerRef.current.querySelector(".scroll-container"),
-          {
-            scrollTo: {
-              y: projectsContainerRef.current.querySelector(".desc-three"),
-            },
-            duration: 1.5,
-          },
-          "<"
-        )
-        .to(
-          projectsContainerRef.current.querySelector(".desc-two"),
-          {
-            opacity: 0.1,
-            duration: 1.5,
-          },
-          "<"
-        )
-        .to(
-          projectsContainerRef.current.querySelector(".desc-three"),
-          {
-            opacity: 1,
-            duration: 1.5,
-          },
-          "<"
-        )
-        // Four.
-        .to(
-          projectsContainerRef.current.querySelector(
-            ".project-container.three"
-          ),
-          {
-            y: "-220%",
-            delay: 0.35,
-            opacity: 0,
-            scale: 0.9,
-            duration: 1.5,
-          }
-        )
-        .to(
-          projectsContainerRef.current.querySelector(".project-container.four"),
-          {
-            y: "-315%",
-            duration: 1.5,
-          },
-          "<"
-        )
-        .to(
-          projectsContainerRef.current.querySelector(".scroll-container"),
-          {
-            scrollTo: {
-              y: projectsContainerRef.current.querySelector(".desc-four"),
-            },
-            duration: 1.5,
-          },
-          "<"
-        )
-        .to(
-          projectsContainerRef.current.querySelector(".desc-three"),
-          {
-            opacity: 0.1,
-            duration: 1.5,
-          },
-          "<"
-        )
-        .to(
-          projectsContainerRef.current.querySelector(".desc-four"),
-          {
-            opacity: 1,
-            duration: 1.5,
-          },
-          "<"
-        )
-
-        // gap at the end for more smoothness
-        .to(projectsContainerRef.current, {
-          duration: 0.5,
         });
+
+        const scrollTl = gsap.timeline({
+          scrollTrigger: {
+            trigger: projectsContainerRef.current,
+            scrub: 1,
+            pin: true,
+            start: "top top",
+            end: "+=2500",
+            // markers: true,
+          },
+        });
+
+        topRowScrollTl
+          .fromTo(
+            projectsContainerRef.current.querySelector(
+              ".projects-scroll-container"
+            ),
+            {
+              autoAlpha: 0,
+            },
+            {
+              autoAlpha: 1,
+              duration: 3,
+            },
+            "<"
+          )
+          .fromTo(
+            projectsContainerRef.current.querySelector(
+              ".contributions-container"
+            ),
+            {
+              autoAlpha: 0,
+              y: 200,
+            },
+            {
+              autoAlpha: 1,
+              y: 0,
+              duration: 3,
+            },
+            "<"
+          );
+
+        scrollTl
+          // The project scrolling.
+          // Two.
+          .to(
+            projectsContainerRef.current.querySelector(
+              ".project-container.one"
+            ),
+            {
+              y: "-10%",
+              delay: 0.35,
+              opacity: 0,
+              scale: 0.9,
+              duration: 1.5,
+            }
+          )
+          .to(
+            projectsContainerRef.current.querySelector(
+              ".project-container.two"
+            ),
+            {
+              y: "-105%",
+              duration: 1.5,
+            },
+            "<"
+          )
+          .to(
+            projectsContainerRef.current.querySelector(".scroll-container"),
+            {
+              scrollTo: {
+                y: projectsContainerRef.current.querySelector(".desc-two"),
+              },
+              duration: 1.5,
+            },
+            "<"
+          )
+          .to(
+            projectsContainerRef.current.querySelector(".desc-one"),
+            {
+              opacity: 0.1,
+              duration: 1.5,
+            },
+            "<"
+          )
+          .to(
+            projectsContainerRef.current.querySelector(".desc-two"),
+            {
+              opacity: 1,
+              duration: 1.5,
+            },
+            "<"
+          )
+          // Three.
+          .to(
+            projectsContainerRef.current.querySelector(
+              ".project-container.two"
+            ),
+            {
+              y: "-115%",
+              delay: 0.35,
+              opacity: 0,
+              scale: 0.9,
+              duration: 1.5,
+            }
+          )
+          .to(
+            projectsContainerRef.current.querySelector(
+              ".project-container.three"
+            ),
+            {
+              y: "-210%",
+              duration: 1.5,
+            },
+            "<"
+          )
+          .to(
+            projectsContainerRef.current.querySelector(".scroll-container"),
+            {
+              scrollTo: {
+                y: projectsContainerRef.current.querySelector(".desc-three"),
+              },
+              duration: 1.5,
+            },
+            "<"
+          )
+          .to(
+            projectsContainerRef.current.querySelector(".desc-two"),
+            {
+              opacity: 0.1,
+              duration: 1.5,
+            },
+            "<"
+          )
+          .to(
+            projectsContainerRef.current.querySelector(".desc-three"),
+            {
+              opacity: 1,
+              duration: 1.5,
+            },
+            "<"
+          )
+          // Four.
+          .to(
+            projectsContainerRef.current.querySelector(
+              ".project-container.three"
+            ),
+            {
+              y: "-220%",
+              delay: 0.35,
+              opacity: 0,
+              scale: 0.9,
+              duration: 1.5,
+            }
+          )
+          .to(
+            projectsContainerRef.current.querySelector(
+              ".project-container.four"
+            ),
+            {
+              y: "-315%",
+              duration: 1.5,
+            },
+            "<"
+          )
+          .to(
+            projectsContainerRef.current.querySelector(".scroll-container"),
+            {
+              scrollTo: {
+                y: projectsContainerRef.current.querySelector(".desc-four"),
+              },
+              duration: 1.5,
+            },
+            "<"
+          )
+          .to(
+            projectsContainerRef.current.querySelector(".desc-three"),
+            {
+              opacity: 0.1,
+              duration: 1.5,
+            },
+            "<"
+          )
+          .to(
+            projectsContainerRef.current.querySelector(".desc-four"),
+            {
+              opacity: 1,
+              duration: 1.5,
+            },
+            "<"
+          )
+
+          // gap at the end for more smoothness
+          .to(projectsContainerRef.current, {
+            duration: 0.5,
+          });
+      });
+      return () => ctx.revert();
     });
-    return () => ctx.revert();
   }, []);
 
   return (
@@ -223,7 +234,7 @@ export default function MyProjects(props) {
           <Project
             index={0}
             classIndex={"one"}
-            title={"Isekai Meta / Studio Sekai"}
+            title={"Isekai / Studio Sekai"}
             description={
               "Isekai Meta is a story and community-driven, hand-drawn NFT collection and metaverse brand that has been summoned on the Ethereum blockchain."
             }
