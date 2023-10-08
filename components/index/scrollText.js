@@ -12,35 +12,41 @@ export default function ScrollText(props) {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    let ctx = gsap.context(() => {
-      const scrollTl = gsap.timeline({
-        scrollTrigger: {
-          trigger: scrollTextContainerRef.current,
-          scrub: 1,
-          start: "top bottom",
-          end: "bottom top",
-          //   markers: true,
-        },
-      });
-
-      /**
-       * Top of section scroll effect.
-       */
-      scrollTl
-        .to(scrollTextContainerRef.current.querySelector(".left-scroll-text"), {
-          x: "-5%",
-          ease: "none",
-        })
-        .to(
-          scrollTextContainerRef.current.querySelector(".right-scroll-text"),
-          {
-            x: "5%",
-            ease: "none",
+    let mm = gsap.matchMedia();
+    mm.add("(min-width: 912px)", () => {
+      let ctx = gsap.context(() => {
+        const scrollTl = gsap.timeline({
+          scrollTrigger: {
+            trigger: scrollTextContainerRef.current,
+            scrub: 1,
+            start: "top bottom",
+            end: "bottom top",
+            //   markers: true,
           },
-          "<"
-        );
+        });
+
+        /**
+         * Top of section scroll effect.
+         */
+        scrollTl
+          .to(
+            scrollTextContainerRef.current.querySelector(".left-scroll-text"),
+            {
+              x: "-5%",
+              ease: "none",
+            }
+          )
+          .to(
+            scrollTextContainerRef.current.querySelector(".right-scroll-text"),
+            {
+              x: "5%",
+              ease: "none",
+            },
+            "<"
+          );
+      });
+      return () => ctx.revert();
     });
-    return () => ctx.revert();
   }, []);
 
   return (
