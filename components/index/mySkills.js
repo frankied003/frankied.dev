@@ -48,8 +48,6 @@ export default function MySkills() {
         scrollTrigger: {
           trigger: mySkillsContainerRef.current,
           start: "25% bottom",
-          toggleActions: "play none none reverse",
-          // markers: true,
         },
       });
 
@@ -85,11 +83,9 @@ export default function MySkills() {
           ),
           {
             autoAlpha: 0,
-            x: -50,
           },
           {
             autoAlpha: 1,
-            x: 0,
             duration: 2,
             stagger: 0.2,
           },
@@ -101,11 +97,9 @@ export default function MySkills() {
           ),
           {
             autoAlpha: 0,
-            x: -50,
           },
           {
             autoAlpha: 1,
-            x: 0,
             duration: 0.5,
             stagger: 0.1,
           },

@@ -137,7 +137,6 @@ export default function BioSection() {
           scrub: 1,
           start: "35% top",
           end: "bottom top",
-          toggleActions: "play none none reverse",
           // markers: true,
         },
       });
@@ -162,7 +161,6 @@ export default function BioSection() {
         scrollTrigger: {
           trigger: bioSectionContainerRef.current,
           start: "35% bottom",
-          toggleActions: "play none none reverse",
           //   markers: true,
         },
       });
