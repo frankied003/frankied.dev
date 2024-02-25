@@ -9,7 +9,7 @@ export default function Metadata() {
       <meta name="title" content="Frankied.dev" />
       <meta
         name="description"
-        content="My name is Frankie DiGiacomo and I am a Full-Stack Developer, UI/UX Designer, and a Data Scientist. Contact me for availability."
+        content="My name is Frank DiGiacomo and I am a Full-Stack Developer, UI/UX Designer, and a Data Scientist. Contact me for availability."
       />
 
       {/* <!-- Open Graph / Facebook --> */}
@@ -18,7 +18,7 @@ export default function Metadata() {
       <meta property="og:title" content="Frankied.dev" />
       <meta
         property="og:description"
-        content="My name is Frankie DiGiacomo and I am a Full-Stack Developer, UI/UX Designer, and a Data Scientist. Contact me for availability."
+        content="My name is Frank DiGiacomo and I am a Full-Stack Developer, UI/UX Designer, and a Data Scientist. Contact me for availability."
       />
       <meta
         property="og:image"
@@ -31,7 +31,7 @@ export default function Metadata() {
       <meta property="twitter:title" content="Frankied.dev" />
       <meta
         property="twitter:description"
-        content="My name is Frankie DiGiacomo and I am a Full-Stack Developer, UI/UX Designer, and a Data Scientist. Contact me for availability."
+        content="My name is Frank DiGiacomo and I am a Full-Stack Developer, UI/UX Designer, and a Data Scientist. Contact me for availability."
       />
       <meta
         property="twitter:image"

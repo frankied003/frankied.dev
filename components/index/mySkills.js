@@ -27,8 +27,6 @@ export default function MySkills() {
     "Postman",
     "Remix",
     "Dataiku",
-    "Jupyter Note",
-    "LabView",
     "Digital Ocean",
     "Vercel",
     "AWS",
