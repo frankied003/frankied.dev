@@ -82,7 +82,7 @@ export default function GithubBadge() {
       ref={badgeContainerRef}
       onMouseEnter={onHover}
       onMouseLeave={onLeave}
-      href="https://github.com/frankied003"
+      href="https://github.com/frankied003/frankied.dev"
       target="#"
     >
       <svg version="1.1" className="circle">
