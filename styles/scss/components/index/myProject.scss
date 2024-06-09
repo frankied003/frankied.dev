@@ -9,9 +9,9 @@
 
   @media screen and (max-width: 912px) {
     padding-top: 10%;
-    margin-bottom: 0%;
+    margin-bottom: 25%;
     padding-bottom: 0%;
-    height: 325vh;
+    height: fit-content;
   }
 
   @media screen and (min-width: 2000px) {
@@ -41,7 +41,7 @@
 
       @media screen and (max-width: 912px) {
         width: 100%;
-        gap: 1.5%;
+        gap: 20px;
       }
     }
 
@@ -107,6 +107,10 @@
           }
 
           &.desc-four {
+            opacity: 0.1;
+          }
+
+          &.desc-five {
             opacity: 0.1;
           }
         }

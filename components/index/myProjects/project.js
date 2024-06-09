@@ -32,7 +32,7 @@ export default function Project(props) {
           className={`image ${props.contain ? "contain" : null}`}
         />
       </div>
-      <VisitButton link={props.link} />
+      {props.disabled ? null : <VisitButton link={props.link} />}
     </div>
   );
 }

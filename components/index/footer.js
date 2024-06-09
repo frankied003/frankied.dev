@@ -30,7 +30,7 @@ export default function Footer() {
         <p className="title">Frankied.dev</p>
       </div>
       <div className="bottom-footer-container">
-        <p className="copyright">©2023 Frankied.dev, All Rights Reserved</p>
+        <p className="copyright">©2024 Frankied.dev, All Rights Reserved</p>
         <div className="time-container">
           <p className="time">
             My Time: <strong>{myTime}</strong>

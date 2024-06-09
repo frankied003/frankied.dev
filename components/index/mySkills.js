@@ -41,68 +41,69 @@ export default function MySkills() {
     // Scroll animation
     gsap.registerPlugin(ScrollTrigger);
 
-    let ctx = gsap.context(() => {
-      const topRowScrollTl = gsap.timeline({
-        scrollTrigger: {
-          trigger: mySkillsContainerRef.current,
-          start: "25% bottom",
-        },
-      });
+    let mm = gsap.matchMedia();
+    mm.add("(min-width: 912px)", () => {
+      let ctx = gsap.context(() => {
+        const topRowScrollTl = gsap.timeline({
+          scrollTrigger: {
+            trigger: mySkillsContainerRef.current,
+            start: "25% bottom",
+          },
+        });
 
-      topRowScrollTl
-        .fromTo(
-          mySkillsContainerRef.current.querySelector(".my-skills-title"),
-          {
-            width: 0,
-          },
-          {
-            width: "100%",
-            duration: 2,
-          },
-          "<"
-        )
-        .fromTo(
-          mySkillsContainerRef.current.querySelector(".my-skills-title"),
-          {
-            "border-right-color": "rgba(0,0,0,0.75)",
-          },
-          {
-            "border-right-color": "rgba(0,0,0,0)",
-            duration: 0.5,
-            repeat: 4,
-            ease: "none",
-            yoyo: true,
-          },
-          "<"
-        )
-        .fromTo(
-          mySkillsContainerRef.current.querySelectorAll(
-            ".skill-section .title"
-          ),
-          {
-            autoAlpha: 0,
-          },
-          {
-            autoAlpha: 1,
-            duration: 2,
-            stagger: 0.2,
-          },
-          "<"
-        )
-        .fromTo(
-          mySkillsContainerRef.current.querySelectorAll(
-            ".skills-container .skill-container"
-          ),
-          {
-            autoAlpha: 0,
-          },
-          {
-            autoAlpha: 1,
-            duration: 0.5,
-            stagger: 0.1,
-          },
-          "<0.5"
-        );
+        topRowScrollTl
+          .fromTo(
+            mySkillsContainerRef.current.querySelector(".my-skills-title"),
+            {
+              width: 0,
+            },
+            {
+              width: "100%",
+              duration: 2,
+            },
+            "<"
+          )
+          .fromTo(
+            mySkillsContainerRef.current.querySelector(".my-skills-title"),
+            {
+              "border-right-color": "rgba(0,0,0,0.75)",
+            },
+            {
+              "border-right-color": "rgba(0,0,0,0)",
+              duration: 0.5,
+              repeat: 4,
+              ease: "none",
+              yoyo: true,
+            },
+            "<"
+          )
+          .fromTo(
+            mySkillsContainerRef.current.querySelectorAll(
+              ".skill-section .title"
+            ),
+            {
+              autoAlpha: 0,
+            },
+            {
+              autoAlpha: 1,
+              duration: 2,
+              stagger: 0.2,
+            },
+            "<"
+          )
+          .fromTo(
+            mySkillsContainerRef.current.querySelectorAll(".skills-container"),
+            {
+              autoAlpha: 0,
+            },
+            {
+              autoAlpha: 1,
+              duration: 0.5,
+              stagger: 0.1,
+            },
+            "<0.5"
+          );
+      });
     });
     return () => ctx.revert();
   }, []);

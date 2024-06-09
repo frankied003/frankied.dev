@@ -82,7 +82,7 @@ export default function Menu(props) {
         />
         <SocialMediaLink
           icon={<AiOutlineTwitter className="icon" />}
-          link={"https://twitter.com/frankied_eth"}
+          link={"https://twitter.com/frankiedigiac"}
           text={"Twitter"}
         />
         <SocialMediaLink

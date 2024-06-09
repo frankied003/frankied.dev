@@ -119,6 +119,7 @@ export default function MyProjects(props) {
             },
             "<"
           )
+
           // Three.
           .to(
             projectsContainerRef.current.querySelector(
@@ -168,6 +169,7 @@ export default function MyProjects(props) {
             },
             "<"
           )
+
           // Four.
           .to(
             projectsContainerRef.current.querySelector(
@@ -218,6 +220,56 @@ export default function MyProjects(props) {
             "<"
           )
 
+          // Five.
+          .to(
+            projectsContainerRef.current.querySelector(
+              ".project-container.four"
+            ),
+            {
+              y: "-325%",
+              delay: 0.35,
+              opacity: 0,
+              scale: 0.9,
+              duration: 1.5,
+            }
+          )
+          .to(
+            projectsContainerRef.current.querySelector(
+              ".project-container.five"
+            ),
+            {
+              y: "-420%",
+              duration: 1.5,
+            },
+            "<"
+          )
+          .to(
+            projectsContainerRef.current.querySelector(".scroll-container"),
+            {
+              scrollTo: {
+                y: projectsContainerRef.current.querySelector(".desc-five"),
+              },
+              duration: 1.5,
+            },
+            "<"
+          )
+          .to(
+            projectsContainerRef.current.querySelector(".desc-four"),
+            {
+              opacity: 0.1,
+              duration: 1.5,
+            },
+            "<"
+          )
+          .to(
+            projectsContainerRef.current.querySelector(".desc-five"),
+            {
+              opacity: 1,
+              duration: 1.5,
+            },
+            "<"
+          )
+
           // gap at the end for more smoothness
           .to(projectsContainerRef.current, {
             duration: 0.5,
@@ -252,6 +304,17 @@ export default function MyProjects(props) {
           <Project
             index={1}
             classIndex={"two"}
+            title={"Rosentica Stardust Gen"}
+            description={
+              "The Gateway to Starfall Chronicles Universe, the Soft-Staking Platform for Travelers, the Collection Gallery, where your Starfall Travelers collect Stardust for you every 24 hours."
+            }
+            skills={["React.JS", "JavaScript", "Vercel", "Supabase", "Python"]}
+            link={"https://stardust.rosentica.jp"}
+            imageSrc={"/assets/projects/rosentica.jpeg"}
+          />
+          <Project
+            index={2}
+            classIndex={"three"}
             title={"onBoard LLC"}
             description={
               "The very first modular surfboard that fits in a carry-on suitcase to improve board performance and decrease travel costs and struggle."
@@ -261,8 +324,8 @@ export default function MyProjects(props) {
             imageSrc={"/assets/projects/onBoard.webp"}
           />
           <Project
-            index={2}
-            classIndex={"three"}
+            index={3}
+            classIndex={"four"}
             title={"Voleious"}
             description={
               "Voleious is an online chat and interaction social media app that encourages discussions of any topic. Our goal is to get people discussing, so start discussing!"
@@ -270,11 +333,12 @@ export default function MyProjects(props) {
             skills={["React Native", "Postgress", "Firebase", "Digital Ocean"]}
             link={"https://voleious.com"}
             imageSrc={"/assets/projects/voleious.webp"}
+            disabled
             contain
           />
           <Project
-            index={3}
-            classIndex={"four"}
+            index={4}
+            classIndex={"five"}
             title={"DigiSevn Delivery System"}
             description={
               "DigiSevn Delivery System is a SAAS enterprise that provides software solutions for commercial and residential deliveries of Oil."
@@ -288,6 +352,7 @@ export default function MyProjects(props) {
             ]}
             link={"https://digisevn.com"}
             imageSrc={"/assets/projects/digiSevn.webp"}
+            disabled
           />
         </div>
         <div className="contributions-container">
@@ -301,16 +366,21 @@ export default function MyProjects(props) {
               development, and website creation.
             </p>
             <p className="description desc-two">
+              Consultant. Developed a soft staking, gamified platform, that
+              allows holders of nfts to generate points and use those points for
+              items.
+            </p>
+            <p className="description desc-three">
               Main developer. Developed and designed a fully-functional,
               pleasing, website including a dynamic "Design your Board", page
               using React and GSAP.
             </p>
-            <p className="description desc-three">
+            <p className="description desc-four">
               Founder and app creator. Developed a fully functionality mobile
               app from idea creation to business plan, down to the code and
               infrastructure of the application .
             </p>
-            <p className="description desc-four">
+            <p className="description desc-five">
               Mobile developer. Created and designed an online / offline React
               Native application that is curated for drivers of oil companies to
               deliver oil.
