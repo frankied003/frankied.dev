@@ -62,27 +62,13 @@ export default function Index() {
             delay: 1,
           }
         )
-        .fromTo(
-          canvasContainerRef.current?.querySelector(".title"),
-          {
-            "border-right-color": "rgba(0,0,0,0.75)",
-            paddingRight: 0,
-          },
-          {
-            "border-right-color": "rgba(0,0,0,0)",
-            duration: 0.5,
-            repeat: 6,
-            ease: "none",
-            yoyo: true,
-          },
-          "<"
-        )
         .to(
           canvasContainerRef.current?.querySelector(".title"),
           {
             width: 0,
             duration: 1,
             delay: 1.8,
+            "border-right-color": "rgba(0,0,0,0)",
           },
           "<"
         );
